@@ -19,6 +19,17 @@ scope_of_consent = 'debt.unsecured.presentation'
 consent_duration_days = '100'
 
 
+def format_headers(headers):
+    return "\n".join([f"{name}: {value}" for (name, value) in headers.items()])
+
+
+def format_request(request):
+    return f"""{request.method} {request.full_url}
+{format_headers(request.headers)}
+
+{request.data.decode('utf-8') if request.data else ""}"""
+
+
 def fetch_access_token(scope, audience):
     access_token_req_data = {
         'scope': scope,
@@ -40,6 +51,11 @@ def fetch_access_token(scope, audience):
                 'Authorization': f'Basic {auth_header}'
             }
     )
+
+    print(f"""
+Sending request:
+{format_request(access_token_request)}
+    """)
 
     try:
         with urllib.request.urlopen(access_token_request) as response:
@@ -71,6 +87,11 @@ def send_json_request(url, data, method, access_token):
                 'Content-Type': 'application/json'
             }
     )
+
+    print(f"""
+Sending request:
+{format_request(request)}
+    """)
 
     try:
         with urllib.request.urlopen(request) as response:

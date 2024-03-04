@@ -1,3 +1,8 @@
-site_name: My Docs
+site_name: NOGI - Developer Docs
 theme:
   name: material
+plugins:
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
+      puml_keyword: plantuml
+  - search

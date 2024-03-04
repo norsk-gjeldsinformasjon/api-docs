@@ -109,6 +109,13 @@ Error description:
         exit(1)
 
 
+# Check that client_id and client_secret are modified from default values
+
+if client_id == '<your-client-id>' or client_secret == '<your-client-secret>':
+    print("You must set client_id and client_secret to your own values before running this script.")
+    exit(1)
+
+
 # Fetch access token to create consent
 
 access_token = fetch_access_token(

@@ -1,6 +1,6 @@
 site_name: Developer Docs
-repo_url: https://github.com/norskgjeld/api-docs
-repo_name: norskgjeld/api-docs
+repo_url: https://github.com/Norsk-Gjeldsinformasjon-AS/api-docs
+repo_name: api-docs
 theme:
   name: material
   favicon: assets/favicon.ico

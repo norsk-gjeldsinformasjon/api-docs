@@ -1,14 +1,15 @@
 # Norsk Gjeldsinformasjon API documentation
 
-This site is build using https://www.mkdocs.org/
+Please report any issues using [GitHub issues](https://github.com/Norsk-Gjeldsinformasjon-AS/api-docs/issues).
+[PRs](https://github.com/Norsk-Gjeldsinformasjon-AS/api-docs/issues) are also welcome.
 
-Please report any issues using [GitHub issues](issues). [PRs](pulls) are also welcome.
+Migration of the public documentation is currently a work in progress,
+the old unmigrated documentation can be found
+[on confluence](https://norskgjeld.atlassian.net/wiki/spaces/GJEL/overview)
 
 # GitHub pages
 
-Visit https://norskgjeld.github.io/api-docs/
-
-MkDocs uses the branch gh-pages to publish its content
+Visit https://norsk-gjeldsinformasjon-as.github.io/api-docs/
 
 # Local development
 

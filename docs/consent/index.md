@@ -23,10 +23,10 @@ at [support@norskgjeld.no](mailto:support@norskgjeld.no).
 
 When you have signed an agreement, we will send your client id and client secret. You must provide
 us with the URLs where you want to receive the callback after the consent flow finishes. This is not required if you
-only intend to manage consents externally ([see section 2.6](#26---consents-created-and-managed-outside-nogi-eg-in-an-online-bank))
+only intend to manage consents externally ([see section 2.6](#26-consents-created-and-managed-outside-nogi-eg-in-an-online-bank))
 
-This service does not require 2-way TLS, so client certificates (Virksomhetssertifikat, SEID) are *
-*not** required.
+This service does not require 2-way TLS, so client certificates (Virksomhetssertifikat, SEID) are 
+**not** required.
 
 If you plan to run from a provider where you share multiple outbound IP-addresses (eg. cloud
 providers), you should purchase fixed outbound IP-address(es).
@@ -37,11 +37,11 @@ Before you can start testing you will need a client with registered callback URI
 user.
 
 This can be created
-at[https://ra-preprod.bankidnorge.no/#/generate](https://ra-preprod.bankidnorge.no/#/generate).
+at [https://ra-preprod.bankidnorge.no/#/generate](https://ra-preprod.bankidnorge.no/#/generate).
 Generate an SSN and set the BankID type to netcentric. When you use this BankID with ID-porten for
 the first time, you will be asked if you want to add additional info which you can skip.
 
-In preprod (BankID TestBank) the one-time code is always "otp", and the password is "qwer1234"
+In preprod (BankID TestBank) the one-time code is always `otp`, and the password is `qwer1234`
 
 Note: There will not be any loan information stored on the BankID test person you have created in
 our test environment, so the debt API will not list any creditors.
@@ -61,7 +61,7 @@ at the [documentation](https://oauth.net/2/), and especially the list of communi
 Access tokens are opaque strings that represents the authorization of a specific application to
 access specific parts of a user’s data. There is no information encoded in the token itself, but it
 can be used to collect debt information from
-the [debt API](https://norskgjeld.atlassian.net/wiki/spaces/GJEL/pages/1614741526/OpenAPI+%28Swagger%29+Documentation).
+the [debt API](Open API/#debt-api).
 **Access tokens are sensitive.** It is important that they are stored securely.
 
 ### 2.3 - Flows
@@ -136,7 +136,6 @@ keep in mind that users can log into [www.norskgjeld.no](http://www.norskgjeld.n
 single time their consent has been used to collect debt info.
 
 ### 2.6 - Consents created and managed outside NoGi (e.g. in an online bank)
-:exclamation:
 **THIS IS A NEW FEATURE, AND THE APIS AND DOCUMENTATION WILL CHANGE!**
 
 ```plantuml
@@ -159,20 +158,22 @@ In order to be able to use this feature, you must conform to the rules and regul
 for this functionality, and sign an agreement up-front.
 
 After you have gathered the consent from the enduser, you will register the consent (and its scope)
-at NoGi. Before you can register the new consent, you must first fetch new access token using [3.4.3 - Client Credentials Flow](#343---client-credentials-flow) with scope set to "consent.create".
+at NoGi. Before you can register the new consent, you must first fetch new access token using 
+[3.4.3 - Client Credentials Flow](#343-client-credentials-flow) with scope set to `consent.create`.
 
-The access token is then used to
-call the [create consent endpoint](https://norskgjeld.github.io/dokumentasjon-test/consent/openapi-redoc.html#tag/samtykke-avtale-controller/operation/createConsent)
-to register the consent from the enduser at NOGI. The `scope_of_consent`, described in [API documentation](https://norskgjeld.github.io/dokumentasjon-test/consent/openapi-redoc.html#tag/samtykke-avtale-controller/operation/createConsent), is the same type of Scope described in [2.4 - Scopes](#24---scopes). This will return the NOGI generated consentId (`consent.id` in response).
+The access token is then used to call the [create consent endpoint](Open API/#put-v1consentagreement) 
+to register the consent from the enduser at NOGI. The `scope_of_consent`, described in 
+[API documentation](Open API/#put-v1consentagreement), is the same type of Scope described in 
+[2.4 - Scopes](#24-scopes). This will return the NOGI generated consentId (`consent.id` in response).
 
-You can then fetch debt by getting an access token using client credentials flow (
-see [3.4.3 - Client Credentials Flow](#343---client-credentials-flow)),
-and then fetch debt as described
-in [4 - Collect Debt Info API](#4---collect-debt-info-api)
+You can then fetch debt by getting an access token using client credentials flow (see 
+[3.4.3 - Client Credentials Flow](#343-client-credentials-flow)), and then fetch debt as described in 
+[4 - Collect Debt Info API](#4-collect-debt-info-api)
 
 #### Example implementation
-There is an example implementation in python of how to create and fetch debt using contract based consents here: [create-agreementbased.py](./assets/create-agreementbased.py). Remember to
-replace the values of the variables in the script:
+There is an example implementation in python of how to create and fetch debt using contract based 
+consents here: [create-agreementbased.py](./assets/create-agreementbased.py). Remember to replace the values of the variables in 
+the script:
 ```python
 client_id = '<your-client-id>'
 client_secret = '<your-client-secret>'
@@ -291,14 +292,14 @@ from the debt-API. This can either be completed with the code received on the ca
 user has finished delivering their consent (Authorization Code Flow) , or the client can identify
 directly with their credentials to obtain an access token directly (Client Credentials Flow).
 
-Here is a [Postman](https://www.postman.com/) collection that contain examples for these
-flows: [https://norskgjeld.atlassian.net/l/c/dJfNfbS0](https://norskgjeld.atlassian.net/l/c/dJfNfbS0)
+[Here](Postman) is a [Postman](https://www.postman.com/) collection that contain examples for these
+flows.
 
 #### 3.4.1 - Authentication
 
 When calling the token endpoint you have to identify yourself. This is done by supplying your client
 id and client secret in the Authorization header using
-the[Basic authentication scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme).
+the [Basic authentication scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme).
 
 #### 3.4.2 - Authorization Code Flow
 
@@ -325,10 +326,10 @@ _**Example response**_
     "expires_in":3599,
     "scope":"debt.unsecured.presentation",
     "token_type":"bearer"
-    }
+}
 ```
 
-##### 3.4.3 - Client Credentials Flow
+#### 3.4.3 - Client Credentials Flow
 
 When requesting an access token using the client credential flow the following parameters have to be
 present in the body which should be of type application/x-www-form-urlencoded
@@ -353,11 +354,11 @@ _**Example response**_
     "expires_in":3599,
     "scope":"debt.unsecured.presentation debt.unsecured.processing",
     "token_type":"bearer"
-    }
+}
 ```
 
 ## 4 - Collect Debt Info API
 
 After you have received an access token from the Authorization server you can use it to collect the
 debt information from the API which is
-documented [here](https://norskgjeld.github.io/dokumentasjon-test/consent/openapi-redoc.html#tag/Debt-Api).
+documented [here](Open API/#debt-api).

@@ -161,9 +161,9 @@ After you have gathered the consent from the enduser, you will register the cons
 at NoGi. Before you can register the new consent, you must first fetch new access token using 
 [3.4.3 - Client Credentials Flow](#343-client-credentials-flow) with scope set to `consent.create`.
 
-The access token is then used to call the [create consent endpoint](Open API/#put-v1consentagreement) 
-to register the consent from the enduser at NOGI. The `scope_of_consent`, described in 
-[API documentation](Open API/#put-v1consentagreement), is the same type of Scope described in 
+The access token is then used to call the [PUT - /v1/consent/agreement endpoint](Open API.md#put-v1consentagreement) 
+to register the consent from the enduser at NOGI. The `scope_of_consent`, described in API documentation for 
+[PUT - /v1/consent/agreement endpoint](Open API.md#put-v1consentagreement), is the same type of Scope described in 
 [2.4 - Scopes](#24-scopes). This will return the NOGI generated consentId (`consent.id` in response).
 
 You can then fetch debt by getting an access token using client credentials flow (see 

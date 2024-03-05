@@ -26,8 +26,6 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
 plugins:
-  - neoteroi.mkdocsoad:
-      use_pymdownx: true
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
       puml_keyword: plantuml
@@ -38,5 +36,3 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-extra_css:
-  - assets/mkdocs-oad-v1.0.4.css

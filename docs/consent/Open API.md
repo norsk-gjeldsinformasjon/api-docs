@@ -1,4 +1,3 @@
-<!--- https://www.neoteroi.dev/mkdocs-plugins/web/oad/ --->
-Download [Open API specification (json)](openapi.json)
+https://github.com/bharel/mkdocs-render-swagger-plugin
 
-[OAD(./docs/consent/openapi.json)]
+!!swagger openapi.json!!

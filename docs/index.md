@@ -1,7 +1,7 @@
 # Welcome to NOGI developer documentation
 
 Please report any issues using [GitHub issues](https://github.com/Norsk-Gjeldsinformasjon-AS/api-docs/issues).
-[PRs](https://github.com/Norsk-Gjeldsinformasjon-AS/api-docs/issues) are also welcome.
+[PRs](https://github.com/Norsk-Gjeldsinformasjon-AS/api-docs/pulls) are also welcome.
 
 Migration of the public documentation is currently a work in progress,
 the old unmigrated documentation can be found 

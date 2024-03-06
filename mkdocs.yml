@@ -1,5 +1,5 @@
 site_name: Developer Docs
-repo_url: https://github.com/Norsk-Gjeldsinformasjon-AS/api-docs
+repo_url: https://github.com/norsk-gjeldsinformasjon/api-docs
 repo_name: api-docs
 theme:
   name: material

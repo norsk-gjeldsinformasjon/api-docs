@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Contract based consent service",
-    "description": "Api for registering consent given by specific persons",
+    "title": "Agreement API",
+    "description": "API for registering consent where a person have consented to share information about their debt.",
     "contact": {
       "name": "Norsk Gjeldsinformasjon",
       "url": "https://norskgjeld.no",
@@ -13,7 +13,7 @@
   "servers": [
     {
       "url": "https://api-preprod.norskgjeld.no",
-      "description": "Preprod environment"
+      "description": "Preproduction environment"
     },
     {
       "url": "https://api.norskgjeld.no",
@@ -22,8 +22,8 @@
   ],
   "tags": [
     {
-      "name": "samtykke-avtale-controller",
-      "x-displayName": "samtykke-avtale-controller"
+      "name": "Agreement API",
+      "x-displayName": "Agreement API"
     },
     {
       "name": "Debt Api",
@@ -38,9 +38,10 @@
     "/v1/consent/agreement": {
       "put": {
         "tags": [
-          "samtykke-avtale-controller"
+          "Agreement API"
         ],
-        "summary": "Register a consent given to a specific person",
+        "summary": "Register a consent",
+        "description": "When a valid consent have been given by a person, this service can be called to create consent at Norsk Gjeldsinformasjon. Consents created and information about their use will also be visible to the person when logged in at norskgjeld.no",
         "operationId": "createConsent",
         "requestBody": {
           "content": {
@@ -87,7 +88,7 @@
             }
           },
           "409": {
-            "description": "This consent (represented by 'our_consent_id') is already registered with some other data.",
+            "description": "This consent (represented by 'client_consent_id') is already registered with some other data.",
             "content": {
               "application/json": {
                 "schema": {
@@ -109,7 +110,7 @@
         },
         "security": [
           {
-            "security_basic_auth": [
+            "OAuth2": [
               "consent.create"
             ]
           }
@@ -535,9 +536,9 @@
       },
       "CreateConsentRequestDTO": {
         "required": [
+          "client_consent_id",
           "consent_duration_days",
           "nin",
-          "our_consent_id",
           "scope_of_consent"
         ],
         "type": "object",
@@ -549,7 +550,7 @@
           },
           "scope_of_consent": {
             "type": "string",
-            "description": "The scope of consent (e.g. presentation))",
+            "description": "The scope of consent (e.g. presentation)",
             "enum": [
               "debt.unsecured.presentation",
               "debt.unsecured.processing"
@@ -561,7 +562,7 @@
             "format": "int32",
             "example": 100
           },
-          "our_consent_id": {
+          "client_consent_id": {
             "type": "string",
             "description": "The ID for the consent stored on your side. Must be unique",
             "example": "e91fcf4c-cfbd-4d59-91e3-71da7a498cac"
@@ -599,14 +600,14 @@
       },
       "CreateConsentResponseDTO": {
         "required": [
-          "consent",
-          "our_consent_id"
+          "client_consent_id",
+          "consent"
         ],
         "type": "object",
         "properties": {
-          "our_consent_id": {
+          "client_consent_id": {
             "type": "string",
-            "description": "The id for the consent on _your_ side. Will be the same as 'our_consent_id' in the request",
+            "description": "The id for the consent on _your_ side. Will be the same as 'client_consent_id' in the request",
             "example": "e91fcf4c-cfbd-4d59-91e3-71da7a498cac"
           },
           "consent": {
@@ -872,17 +873,17 @@
       }
     },
     "securitySchemes": {
-      "security_basic_auth": {
-        "type": "http",
+      "OAuth2": {
+        "type": "oauth2",
         "scheme": "bearer"
       }
     }
   },
   "x-tagGroups": [
     {
-      "name": "Contract based consent service",
+      "name": "Agreement API",
       "tags": [
-        "samtykke-avtale-controller"
+        "Agreement API"
       ]
     },
     {

@@ -435,7 +435,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/consent_metadata"
+                  "$ref": "#/components/schemas/consent_status"
                 }
               }
             }
@@ -828,6 +828,21 @@
               "debt.unsecured.processing"
             ],
             "example": "debt.unsecured.presentation"
+          }
+        }
+      },
+      "consent_status": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean",
+            "description": "Whether this consent is active",
+            "example": true
+          },
+          "expires_at": {
+            "type": "integer",
+            "description": "Consent expiry in epoch time.",
+            "example": 1629195636
           }
         }
       },

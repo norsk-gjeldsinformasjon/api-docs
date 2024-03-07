@@ -584,7 +584,7 @@
           },
           "expires_at": {
             "type": "string",
-            "description": "Expiry time of the consent",
+            "description": "Expiry time of the consent (ISO-8601 formatted)",
             "format": "date-time",
             "example": "2018-01-10T06:14:00Z"
           },

@@ -128,7 +128,7 @@ create_consent_req_data = {
     'nin': nin,
     'scope_of_consent': scope_of_consent,
     'consent_duration_days': consent_duration_days,
-    'our_consent_id': str(ex_consent_id),
+    'client_consent_id': str(ex_consent_id),
 }
 
 created_consent = send_json_request(

@@ -889,7 +889,7 @@
     },
     "securitySchemes": {
       "OAuth2": {
-        "type": "oauth2",
+        "type": "http",
         "scheme": "bearer"
       }
     }

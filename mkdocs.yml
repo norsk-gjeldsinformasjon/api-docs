@@ -25,6 +25,9 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
+# Extra styling to enhance contrast in dark/light mode
+extra_css:
+  - "stylesheets/extra.css"
 plugins:
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/

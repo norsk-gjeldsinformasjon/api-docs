@@ -19,4 +19,8 @@ token from the token endpoint using the client credentials flow.
 
 ## How do I start using the service?
 
-Contact Norsk Gjeldsinformasjon AS to enter into an agreement and receive your client credentials. 
+Contact Norsk Gjeldsinformasjon AS to enter into an agreement and receive your client credentials.
+
+## How should I inform Norsk Gjeldsinformasjon about an end user revoking their consent
+
+When an end user has revoked their consent in your service, use the ["Revoke a consent by ID" (/v1/debt/{consent-id})](../Open API/#debt-api#revoke-a-consent-by-id) endpoint to inform us that the consent has been revoked

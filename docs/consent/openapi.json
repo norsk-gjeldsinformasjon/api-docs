@@ -162,18 +162,18 @@
                     "value": {
                       "startSequenceNr": 1,
                       "endSequenceNr": 2,
-                      "generatedAt": 1715688811.6046844,
+                      "generatedAt": "2024-05-21T12:51:57.383110992Z",
                       "result": [
                         {
                           "sequenceNr": 1,
                           "eventId": "a499c700-7e36-4bd5-9b6b-19024b4f94f9",
                           "consentId": "c8ff2ad5-4140-481d-a7cd-6c7deee7203c",
-                          "timestamp": 1715176654.3975668,
+                          "timestamp": "2024-05-20T12:51:52.184886875Z",
                           "eventType": "SAMTYKKE_OPPRETTET",
                           "samtykkeOpprettetEvent": {
                             "clientId": "f8c4da9f-4c93-4904-8de4-b5942776f9c2",
                             "consentId": "c8ff2ad5-4140-481d-a7cd-6c7deee7203c",
-                            "scope": "debt.unsecured.presentation.100",
+                            "scope": "debt.unsecured.presentation",
                             "externalConsentId": "cddda7ed-33be-432e-90d2-0179fbf60cb7"
                           },
                           "samtykkeArkivertEvent": null
@@ -182,7 +182,7 @@
                           "sequenceNr": 2,
                           "eventId": "47e34ae1-022f-46d4-b3e5-e8ef2dd2761c",
                           "consentId": "c8ff2ad5-4140-481d-a7cd-6c7deee7203c",
-                          "timestamp": 1715176654.5039988,
+                          "timestamp": "2024-05-21T12:51:53.334608446Z",
                           "eventType": "SAMTYKKE_ARKIVERT",
                           "samtykkeOpprettetEvent": null,
                           "samtykkeArkivertEvent": {
@@ -198,18 +198,18 @@
                     "value": {
                       "startSequenceNr": 3,
                       "endSequenceNr": 4,
-                      "generatedAt": 1715688811.6046844,
+                      "generatedAt": "2024-05-21T13:40:05.334608446Z",
                       "result": [
                         {
                           "sequenceNr": 3,
                           "eventId": "9634f284-22e7-43a9-bd87-219128a986cb",
                           "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
-                          "timestamp": 1715176654.3975668,
+                          "timestamp": "2024-05-21T13:00:05.214282916Z",
                           "eventType": "SAMTYKKE_OPPRETTET",
                           "samtykkeOpprettetEvent": {
                             "clientId": "f8c4da9f-4c93-4904-8de4-b5942776f9c2",
                             "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
-                            "scope": "debt.unsecured.presentation.100",
+                            "scope": "debt.unsecured.presentation",
                             "externalConsentId": "40718443-2b30-42f4-b401-5d50d0e4fce3"
                           },
                           "samtykkeArkivertEvent": null
@@ -218,12 +218,12 @@
                           "sequenceNr": 4,
                           "eventId": "cb7e1a19-107f-4860-a9ea-d8106a16e8a1",
                           "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
-                          "timestamp": 1715176654.3975668,
+                          "timestamp": "2024-05-21T13:12:52.266725880Z",
                           "eventType": "SAMTYKKE_OPPRETTET",
                           "samtykkeOpprettetEvent": {
                             "clientId": "f8c4da9f-4c93-4904-8de4-b5942776f9c2",
                             "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
-                            "scope": "debt.unsecured.presentation.100",
+                            "scope": "debt.unsecured.presentation",
                             "externalConsentId": "9bb63979-2a44-49ad-accb-cb54d418dd4f"
                           },
                           "samtykkeArkivertEvent": null

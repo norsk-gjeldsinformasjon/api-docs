@@ -362,3 +362,17 @@ _**Example response**_
 After you have received an access token from the Authorization server you can use it to collect the
 debt information from the API which is
 documented [here](Open API/#operations-tag-Debt_Api).
+
+## 5 - Read updates about consents
+
+**This feature is currently only available in the preprod environment.**
+
+Updates to consents are available as a feed for customers of the consent service.
+
+This service can be used to "subscribe" to changes instead of checking the status of each individual consent you have registered.
+
+This log will show the last 7 days of events for alle consents given to you.
+
+You will need to use an access token with scope="consent.events" and audience set to "https://api-preprod.norskgjeld.no/feed/v1/consent" (for preprod) or "https://api.norskgjeld.no/feed/v1/consent" (for production) when calling this API.
+
+The API is defined [here](Open API#operations-tag-Consents_Feed_API).

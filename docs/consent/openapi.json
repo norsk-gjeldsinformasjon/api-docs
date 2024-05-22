@@ -26,6 +26,10 @@
       "x-displayName": "Agreement API"
     },
     {
+      "name": "Consents Feed API",
+      "x-displayName": "Consents Feed API"
+    },
+    {
       "name": "Debt Api",
       "x-displayName": "Debt Api"
     }
@@ -115,6 +119,165 @@
             ]
           }
         ]
+      }
+    },
+    "/feed/v1/consent": {
+      "get": {
+        "tags": [
+          "Consents Feed API"
+        ],
+        "summary": "Returns the events from 'fromSequenceNr' (included), limited to 'limit' nr of events",
+        "operationId": "feed",
+        "parameters": [
+          {
+            "name": "fromSequenceNr",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response OK with two events",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SamtykkeFeedResponseDTO"
+                },
+                "examples": {
+                  "fromSequenceNr=1, limit=2": {
+                    "description": "When polling, the start point in the feed is indicated by the `fromSequenceNr`\n                            request parameter, and the number of events to poll is specified with the `limit` request\n                            parameter.",
+                    "value": {
+                      "startSequenceNr": 1,
+                      "endSequenceNr": 2,
+                      "generatedAt": 1715688811.6046844,
+                      "result": [
+                        {
+                          "sequenceNr": 1,
+                          "eventId": "a499c700-7e36-4bd5-9b6b-19024b4f94f9",
+                          "consentId": "c8ff2ad5-4140-481d-a7cd-6c7deee7203c",
+                          "timestamp": 1715176654.3975668,
+                          "eventType": "SAMTYKKE_OPPRETTET",
+                          "samtykkeOpprettetEvent": {
+                            "clientId": "f8c4da9f-4c93-4904-8de4-b5942776f9c2",
+                            "consentId": "c8ff2ad5-4140-481d-a7cd-6c7deee7203c",
+                            "scope": "debt.unsecured.presentation.100",
+                            "externalConsentId": "cddda7ed-33be-432e-90d2-0179fbf60cb7"
+                          },
+                          "samtykkeArkivertEvent": null
+                        },
+                        {
+                          "sequenceNr": 2,
+                          "eventId": "47e34ae1-022f-46d4-b3e5-e8ef2dd2761c",
+                          "consentId": "c8ff2ad5-4140-481d-a7cd-6c7deee7203c",
+                          "timestamp": 1715176654.5039988,
+                          "eventType": "SAMTYKKE_ARKIVERT",
+                          "samtykkeOpprettetEvent": null,
+                          "samtykkeArkivertEvent": {
+                            "clientId": "f8c4da9f-4c93-4904-8de4-b5942776f9c2",
+                            "consentId": "cddda7ed-33be-432e-90d2-0179fbf60cb7"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "fromSequenceNr=3, limit=2": {
+                    "description": "The next poll starts after the most recent event received. `fromSequenceNr` is\n                            typically the highest sequenceNr the client have seen + 1. The number of events to poll is\n                            specified with the `limit` request parameter.",
+                    "value": {
+                      "startSequenceNr": 3,
+                      "endSequenceNr": 4,
+                      "generatedAt": 1715688811.6046844,
+                      "result": [
+                        {
+                          "sequenceNr": 3,
+                          "eventId": "9634f284-22e7-43a9-bd87-219128a986cb",
+                          "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
+                          "timestamp": 1715176654.3975668,
+                          "eventType": "SAMTYKKE_OPPRETTET",
+                          "samtykkeOpprettetEvent": {
+                            "clientId": "f8c4da9f-4c93-4904-8de4-b5942776f9c2",
+                            "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
+                            "scope": "debt.unsecured.presentation.100",
+                            "externalConsentId": "40718443-2b30-42f4-b401-5d50d0e4fce3"
+                          },
+                          "samtykkeArkivertEvent": null
+                        },
+                        {
+                          "sequenceNr": 4,
+                          "eventId": "cb7e1a19-107f-4860-a9ea-d8106a16e8a1",
+                          "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
+                          "timestamp": 1715176654.3975668,
+                          "eventType": "SAMTYKKE_OPPRETTET",
+                          "samtykkeOpprettetEvent": {
+                            "clientId": "f8c4da9f-4c93-4904-8de4-b5942776f9c2",
+                            "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
+                            "scope": "debt.unsecured.presentation.100",
+                            "externalConsentId": "9bb63979-2a44-49ad-accb-cb54d418dd4f"
+                          },
+                          "samtykkeArkivertEvent": null
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feed/v1/consent/lastSequenceNr": {
+      "get": {
+        "tags": [
+          "Consents Feed API"
+        ],
+        "summary": "Returns the last ('newest') sequence number in the event feed",
+        "operationId": "lastSequenceNr",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/LastSequenceNrResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feed/v1/consent/firstSequenceNr": {
+      "get": {
+        "tags": [
+          "Consents Feed API"
+        ],
+        "summary": "Returns the first ('oldest') sequence number in the event feed",
+        "operationId": "firstSequenceNr",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/FirstSequenceNrResponse"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/v1/debt": {
@@ -615,6 +778,177 @@
           }
         }
       },
+      "SamtykkeArkivertEventDTO": {
+        "required": [
+          "clientId",
+          "consentId"
+        ],
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "description": "The client that this consent was given to",
+            "format": "uuid",
+            "example": "a1e533a5-6311-40c6-9db0-93fe37baab14"
+          },
+          "consentId": {
+            "type": "string",
+            "description": "This events corresponding 'consentId'. Can be used to figure out the proper enduser",
+            "format": "uuid",
+            "example": "dffe8795-4a91-4729-9fc8-68c42b33eb00"
+          }
+        },
+        "description": "The event content if event is of type SAMTYKKE_ARKIVERT"
+      },
+      "SamtykkeFeedEventDTO": {
+        "required": [
+          "consentId",
+          "eventId",
+          "eventType",
+          "sequenceNr",
+          "timestamp"
+        ],
+        "type": "object",
+        "properties": {
+          "sequenceNr": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "This events sequenceNr",
+            "format": "int64",
+            "example": 12356
+          },
+          "eventId": {
+            "type": "string",
+            "description": "This events id",
+            "format": "uuid",
+            "example": "a132b02b-f543-4e35-9f46-60ba598da886"
+          },
+          "consentId": {
+            "type": "string",
+            "description": "This events corresponding 'consentId'. Can be used to figure out the proper enduser",
+            "format": "uuid",
+            "example": "5826f424-1848-4fc3-bb60-1bfca8f4a701"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event occurred (ISO-8601)",
+            "format": "date-time",
+            "example": "2024-05-16T14:50:44.27Z"
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The event type",
+            "enum": [
+              "SAMTYKKE_OPPRETTET",
+              "SAMTYKKE_ARKIVERT"
+            ]
+          },
+          "samtykkeOpprettetEvent": {
+            "$ref": "#/components/schemas/SamtykkeOpprettetEventDTO"
+          },
+          "samtykkeArkivertEvent": {
+            "$ref": "#/components/schemas/SamtykkeArkivertEventDTO"
+          }
+        },
+        "description": "The actual events"
+      },
+      "SamtykkeFeedResponseDTO": {
+        "required": [
+          "endSequenceNr",
+          "generatedAt",
+          "result",
+          "startSequenceNr"
+        ],
+        "type": "object",
+        "properties": {
+          "startSequenceNr": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "The start sequence number (included) for this response",
+            "format": "int64",
+            "example": 1
+          },
+          "endSequenceNr": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "The last (included) sequence number for this response",
+            "format": "int64",
+            "example": 2
+          },
+          "generatedAt": {
+            "type": "string",
+            "description": "Timestamp for when this response was generated (ISO-8601)",
+            "format": "date-time",
+            "example": "2024-05-13T14:30:00.123Z"
+          },
+          "result": {
+            "type": "array",
+            "description": "The actual events",
+            "items": {
+              "$ref": "#/components/schemas/SamtykkeFeedEventDTO"
+            }
+          }
+        }
+      },
+      "SamtykkeOpprettetEventDTO": {
+        "required": [
+          "clientId",
+          "consentId",
+          "scope"
+        ],
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "description": "The client that this consent has been given to",
+            "format": "uuid",
+            "example": "a1e533a5-6311-40c6-9db0-93fe37baab14"
+          },
+          "consentId": {
+            "type": "string",
+            "description": "This events corresponding 'consentId'. Can be used to figure out the proper enduser",
+            "format": "uuid",
+            "example": "07c1fa64-30a5-4066-8b6f-37a3fa1c83f9"
+          },
+          "scope": {
+            "type": "string",
+            "description": "Indicates which type of consent the user agreed to",
+            "example": "debt.unsecured.presentation"
+          },
+          "externalConsentId": {
+            "type": "string",
+            "description": "Clients reference to this consent",
+            "example": "consent-123"
+          }
+        },
+        "description": "The event content if event is of type SAMTYKKE_OPPRETTET"
+      },
+      "LastSequenceNrResponse": {
+        "required": [
+          "lastSequenceNr"
+        ],
+        "type": "object",
+        "properties": {
+          "lastSequenceNr": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "The last ('newest') sequence number"
+      },
+      "FirstSequenceNrResponse": {
+        "required": [
+          "firstSequenceNr"
+        ],
+        "type": "object",
+        "properties": {
+          "firstSequenceNr": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "The first ('oldest') sequence number"
+      },
       "debt_information": {
         "type": "object",
         "properties": {
@@ -899,6 +1233,12 @@
       "name": "Agreement API",
       "tags": [
         "Agreement API"
+      ]
+    },
+    {
+      "name": "Consents Feed API",
+      "tags": [
+        "Consents Feed API"
       ]
     },
     {

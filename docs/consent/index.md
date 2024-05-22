@@ -3,7 +3,7 @@
 This service lets you:
 
 * Ask user for consent to share unsecured debt information
-* Fetch information about a Norwegian citizens unsecured debt based on that consent
+* Fetch information about a consumers unsecured debt based on that consent
 
 It uses a redirect-based flow which adheres to the common OAuth2.0 and OpenID Connect standards.
 

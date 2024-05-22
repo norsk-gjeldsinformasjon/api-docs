@@ -136,7 +136,6 @@ keep in mind that users can log into [www.norskgjeld.no](http://www.norskgjeld.n
 single time their consent has been used to collect debt info.
 
 ### 2.6 - Consents created and managed outside NoGi (e.g. in an online bank)
-**THIS IS A NEW FEATURE, AND THE APIS AND DOCUMENTATION WILL CHANGE!**
 
 ```plantuml
 @startuml consentsCreatedOutSideNoGiSequence

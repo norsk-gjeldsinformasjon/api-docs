@@ -372,10 +372,10 @@ This service can be used to "subscribe" to changes instead of checking the statu
 
 This log will show the last 7 days of events for alle consents given to you.
 
-You will need to use an access token with scope="consent.events" and audience set to "https://api-preprod.norskgjeld.no/feed/v1/consent" (for preprod) or "https://api.norskgjeld.no/feed/v1/consent" (for production) when calling this API.
+You will need to use an access token with scope="client.access.consent.events" and audience set to "https://api-preprod.norskgjeld.no/feed/v1/consent" (for preprod) or "https://api.norskgjeld.no/feed/v1/consent" (for production) when calling this API.
 
-NOTE: The sequence numbers you receive will not necessarily correlate to the time a change happened.\
-You must check the timestamps inside the events if you need to order them by when they happened.\
+NOTE: The sequence numbers you receive will not necessarily correlate to the time a change happened.
+You must check the timestamps inside the events if you need to order them by when they happened.
 Sequence number 3 might contain an event that occurred _after_ sequence number 4.
 
 NOTE: The sequence numbers are not guaranteed to be contiguous. You might receive a response containing {seq. nr: 7, seq. nr: 8, seq. nr: 13}.\

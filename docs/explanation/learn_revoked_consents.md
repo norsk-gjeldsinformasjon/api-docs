@@ -8,8 +8,8 @@ Consents can become inactive
 
 If you have the consentId of the consent that you want to check, you can call us on `/v1/debt/{consentId}/status`. The response will indicate whether the consent is active and the expiration time.
 
-See our [OpenAPI](/consent/Open API/) documentation for more information.
+See our [OpenAPI](../reference/openapi.md) documentation for more information.
 
 ## I need to be notified about changes as they happen
 
-You can also be notified about changes to consents as they happen by subscribing to Consent Feed API. See the [OpenAPI](/consent/Open API/) reference for more information.
+You can also be notified about changes to consents as they happen by subscribing to Consent Feed API. See the [OpenAPI](../reference/openapi.md) reference for more information.

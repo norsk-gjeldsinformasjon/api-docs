@@ -61,7 +61,7 @@ at the [documentation](https://oauth.net/2/), and especially the list of communi
 Access tokens are opaque strings that represents the authorization of a specific application to
 access specific parts of a user’s data. There is no information encoded in the token itself, but it
 can be used to collect debt information from
-the [debt API](Open API/#debt-api).
+the [debt API](../reference/openapi.md#debt-api).
 **Access tokens are sensitive.** It is important that they are stored securely.
 
 ### 2.3 - Flows
@@ -160,9 +160,9 @@ After you have gathered the consent from the enduser, you will register the cons
 at NoGi. Before you can register the new consent, you must first fetch new access token using 
 [3.4.3 - Client Credentials Flow](#343-client-credentials-flow) with scope set to `consent.create`.
 
-The access token is then used to call the [PUT - /v1/consent/agreement endpoint](Open API.md#operations-samtykke-avtale-controller-createConsent) 
+The access token is then used to call the [PUT - /v1/consent/agreement endpoint](../reference/openapi.md#operations-samtykke-avtale-controller-createConsent) 
 to register the consent from the enduser at NOGI. The `scope_of_consent`, described in API documentation for 
-[PUT - /v1/consent/agreement endpoint](Open API.md#operations-samtykke-avtale-controller-createConsent), is the same type of Scope described in 
+[PUT - /v1/consent/agreement endpoint](../reference/openapi.md#operations-samtykke-avtale-controller-createConsent), is the same type of Scope described in 
 [2.4 - Scopes](#24-scopes). This will return the NOGI generated consentId (`consent.id` in response).
 
 You can then fetch debt by getting an access token using client credentials flow (see 
@@ -360,7 +360,7 @@ _**Example response**_
 
 After you have received an access token from the Authorization server you can use it to collect the
 debt information from the API which is
-documented [here](Open API/#operations-tag-Debt_Api).
+documented [here](../reference/openapi.md/#operations-tag-Debt_Api).
 
 ## 5 - Read updates about consents
 
@@ -381,4 +381,4 @@ Sequence number 3 might contain an event that occurred _after_ sequence number 4
 NOTE: The sequence numbers are not guaranteed to be contiguous. You might receive a response containing {seq. nr: 7, seq. nr: 8, seq. nr: 13}.\
 The sequence numbers 9-12 are not missing.
 
-The API is defined [here](Open API#operations-tag-Consents_Feed_API).
+The API is defined [here](../reference/openapi.md#operations-tag-Consents_Feed_API).

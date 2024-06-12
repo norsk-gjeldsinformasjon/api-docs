@@ -291,9 +291,6 @@ from the debt-API. This can either be completed with the code received on the ca
 user has finished delivering their consent (Authorization Code Flow) , or the client can identify
 directly with their credentials to obtain an access token directly (Client Credentials Flow).
 
-[Here](Postman) is a [Postman](https://www.postman.com/) collection that contain examples for these
-flows.
-
 #### 3.4.1 - Authentication
 
 When calling the token endpoint you have to identify yourself. This is done by supplying your client
@@ -315,10 +312,8 @@ POST:https://access-preprod.norskgjeld.no/oauth2/token
 
 HEADERS and BODY as described above.
 
-There is an example in the Postman collection ‘Tokens/Exchange Auth Code for Tokens’
 
 _**Example response**_
-
 ```json
 {
     "access_token":"YcvXKoiuOwnbJkxso2Oe6bhp2cXcoHdZ1pdgE_QpDww.cAu8_J51evXtBQxfTMzkRA414_mOla1zryE1e_-r-1k",
@@ -342,8 +337,6 @@ POST:https://access-preprod.norskgjeld.no/oauth2/token
 ```
 
 HEADERS and BODY as described above.
-
-There is an example in the Postman collection ‘Tokens/Get Client Credential Token’
 
 _**Example response**_
 

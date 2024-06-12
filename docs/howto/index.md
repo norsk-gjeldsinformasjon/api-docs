@@ -7,4 +7,4 @@ Help users solve specific problems or accomplish specific tasks. Provide practic
 -->
 
 [Contributing to this documentation](../howto/contributing.md)
-[Revoking consents](../explanation/consent_revoke.md)
+[Revoking consents](../explanation/consent.md#client-revokes-consent)

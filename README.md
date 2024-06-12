@@ -13,7 +13,7 @@ Visit https://norsk-gjeldsinformasjon.github.io/api-docs/
 
 # Local development
 
-    virtualenv env
+    python -m venv env # or: virtualenv env
     source env/bin/activate
     pip install -r requirements.txt
     mkdocs serve

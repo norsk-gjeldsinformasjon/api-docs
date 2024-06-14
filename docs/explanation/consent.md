@@ -1,4 +1,4 @@
-# Consents
+# Consents explained
 
 Individuals can consent to share information about their debt with other organizations. When a user have consented, the organization will be able to look up information about the individuals debt. Consents have a defined purpose which limits what the information should be used for.
 
@@ -36,3 +36,13 @@ Consents can become inactive for different reasons
 - Consent expiration time have passed
 - User revokes consent through your service
 - User revokes consent at norskgjeld.no
+
+## Authorization
+
+### Does the token endpoint return id tokens?
+
+Token endpoint does not deliver id tokens. To verify the identity of the user you can check the identity-number which is delivered in the debt response json.
+
+### Does the token endpoint return refresh tokens?
+
+No, the token endpoint does not deliver refresh tokens. To collect debt information with a consent for an extended duration you will have to obtain an access token from the token endpoint using the client [credentials flow](../reference/consent_flows.md).

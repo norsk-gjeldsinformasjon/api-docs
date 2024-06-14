@@ -1,11 +1,11 @@
-# Norsk Gjeldsinformasjon developer reference
+# Norsk Gjeldsinformasjon technical reference
 
 Norsk Gjeldsinformasjon is a debt registry which collects information about individuals unsecured debt from various financial institutions. We provide lenders and individuals with an overview of unsecured debt, which can include credit card debt, personal loans, and other forms of non-secured borrowing.
 
 Norsk Gjeldsinformasjon aims to improve transparency in the financial sector, helping lenders assess the creditworthiness of borrowers more accurately. By providing comprehensive debt information, Norsk Gjeldsinformasjon helps prevent individuals from taking on unsustainable levels of debt and supports responsible lending practices. It is part of a broader effort in Norway to promote financial stability and consumer protection.
 
 Migration of the public documentation is currently a work in progress,
-the old unmigrated documentation can be found
+the documentation that is not yet migrated can be found
 [on confluence](https://norskgjeld.atlassian.net/wiki/spaces/GJEL/overview)
 
 
@@ -13,7 +13,7 @@ the old unmigrated documentation can be found
 
 ### Information for individuals
 
-Individuals can see an overview of their own unsecuredt debt and any consents that has the individual has given to share data about their debt. Users can also choose to withdraw any consents given.
+Individuals can see an overview of their own unsecured debt and any consents that has the individual has given, and when consents have been used. Users can also choose to withdraw any consents given.
 
 This information can be viewed by individuals by logging in to ["Min Gjeld"](https://www.norskgjeld.no/)
 

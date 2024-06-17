@@ -13,7 +13,7 @@ the end users consent, we also include the name of the creditors.
 ## 1 - Getting started
 
 ### 1.1 - Introduction
-![Overview of the consent service major components!](./assets/ConsentOverview.png "Consent overview")
+![Overview of the consent service major components!](assets/ConsentOverview.png "Consent overview")
 
 ### 1.2 - Requirements
 
@@ -61,7 +61,7 @@ at the [documentation](https://oauth.net/2/), and especially the list of communi
 Access tokens are opaque strings that represents the authorization of a specific application to
 access specific parts of a user’s data. There is no information encoded in the token itself, but it
 can be used to collect debt information from
-the [debt API](../reference/openapi.md#debt-api).
+the [debt API](openapi.md#debt-api).
 **Access tokens are sensitive.** It is important that they are stored securely.
 
 ### 2.3 - Flows
@@ -160,19 +160,19 @@ After you have gathered the consent from the enduser, you will register the cons
 at NoGi. Before you can register the new consent, you must first fetch new access token using 
 [3.4.3 - Client Credentials Flow](#343-client-credentials-flow) with scope set to `consent.create`.
 
-The access token is then used to call the [PUT - /v1/consent/agreement endpoint](../reference/openapi.md#operations-samtykke-avtale-controller-createConsent) 
-to register the consent from the enduser at NOGI. The `scope_of_consent`, described in API documentation for 
-[PUT - /v1/consent/agreement endpoint](../reference/openapi.md#operations-samtykke-avtale-controller-createConsent), is the same type of Scope described in 
+The access token is then used to call the [PUT - /v1/consent/agreement endpoint](openapi.md#operations-samtykke-avtale-controller-createConsent)
+to register the consent from the enduser at NOGI. The `scope_of_consent`, described in API documentation for
+[PUT - /v1/consent/agreement endpoint](openapi.md#operations-samtykke-avtale-controller-createConsent), is the same type of Scope described in
 [2.4 - Scopes](#24-scopes). This will return the NOGI generated consentId (`consent.id` in response).
 
-You can then fetch debt by getting an access token using client credentials flow (see 
-[3.4.3 - Client Credentials Flow](#343-client-credentials-flow)), and then fetch debt as described in 
+You can then fetch debt by getting an access token using client credentials flow (see
+[3.4.3 - Client Credentials Flow](#343-client-credentials-flow)), and then fetch debt as described in
 [4 - Collect Debt Info API](#4-collect-debt-info-api)
 
 #### Example implementation
 There is an example implementation in python of how to create and fetch debt using contract based 
-consents here: [create-agreementbased.py](./assets/create-agreementbased.py). Remember to replace the values of the variables in 
-the script:
+consents here: [create-agreementbased.py](assets/create-agreementbased.py). Remember to replace the values of the variables in the script:
+
 ```python
 client_id = '<your-client-id>'
 client_secret = '<your-client-secret>'
@@ -374,4 +374,4 @@ Sequence number 3 might contain an event that occurred _after_ sequence number 4
 NOTE: The sequence numbers are not guaranteed to be contiguous. You might receive a response containing {seq. nr: 7, seq. nr: 8, seq. nr: 13}.\
 The sequence numbers 9-12 are not missing.
 
-The API is defined [here](../reference/openapi.md#operations-tag-Consents_Feed_API).
+The API is defined [here](openapi.md#operations-tag-Consents_Feed_API).

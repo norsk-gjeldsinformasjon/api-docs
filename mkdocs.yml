@@ -47,10 +47,11 @@ nav:
       - Choose integration: howto/choose_integration.md
       - Authorize: howto/consent_authorize.md
       - Contribute: howto/contributing.md
+  - Reference:
+      - Reference: reference/index.md
+      - Consent reference: reference/consent.md
+      - Consent flows: reference/consent_flows.md
+      - OpenAPI: reference/openapi.md
   - Explanations:
       - Explanations: explanation/index.md
       - Consent: explanation/consent.md
-  - Reference:
-      - Consent reference: reference/consent.md
-      - Consent flows: reference/consent_flows.md
-      - Index: reference/index.md

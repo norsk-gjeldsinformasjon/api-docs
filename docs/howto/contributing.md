@@ -1,4 +1,4 @@
-## Contributing to this documentation
+## Contributing to the techincal reference
 
 Please report any issues using [GitHub issues](https://github.com/norsk-gjeldsinforma\
 sjon/api-docs/issues).

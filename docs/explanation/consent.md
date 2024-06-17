@@ -51,4 +51,4 @@ Token endpoint does not deliver id tokens. To verify the identity of the user yo
 
 ### Does the token endpoint return refresh tokens?
 
-No, the token endpoint does not deliver refresh tokens. To collect debt information with a consent for an extended duration you will have to obtain an access token from the token endpoint using the [client credentials flow](../reference/consent_flows.md#client-credentials-flow).
+No, the token endpoint does not deliver refresh tokens. To collect debt information with a consent for an extended duration you will have to obtain an access token from the token endpoint using the [client credentials flow](../reference/index.md#client-credentials-flow).

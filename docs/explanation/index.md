@@ -13,6 +13,8 @@ Provide in-depth information to help users understand concepts, mechanisms, or p
 
 Reach out to [Norsk Gjeldsinformasjon](https://www.norskgjeld.no/kontakt-oss/) for more information about using these services.
 
+See [Get started](../get-started/index.md) for how to start using consent.
+
 ### What is unsecuredt debt?
 
 Unsecured debt include credit card debt, personal loans, and other forms of non-secured borrowing.

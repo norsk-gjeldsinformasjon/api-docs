@@ -50,7 +50,6 @@ nav:
   - Reference:
       - Reference: reference/index.md
       - Consent reference: reference/consent.md
-      - Consent flows: reference/consent_flows.md
       - OpenAPI: reference/openapi.md
   - Explanations:
       - Explanations: explanation/index.md

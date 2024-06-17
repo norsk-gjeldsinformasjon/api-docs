@@ -11,7 +11,7 @@ Provide in-depth information to help users understand concepts, mechanisms, or p
 
 ### <a name="how-do-i-start"></a> How do I start using a service?
 
-Reach out to [Norsk Gjeldsinformasjon](https://www.norskgjeld.no/kontakt-oss/) for more information about using one of our services.
+Reach out to [Norsk Gjeldsinformasjon](https://www.norskgjeld.no/kontakt-oss/) for more information about using these services.
 
 ### What is unsecuredt debt?
 

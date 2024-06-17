@@ -41,12 +41,12 @@ markdown_extensions:
       alternate_style: true
 nav:
   - Home: index.md
+  - Get started: get-started/index.md
   - How-to:
       - How-to: howto/index.md
-      - Choose integration: howto/select_integration.md
+      - Choose integration: howto/choose_integration.md
       - Authorize: howto/consent_authorize.md
       - Contribute: howto/contributing.md
-  - Get started: get-started/index.md
   - Explanations:
       - Explanations: explanation/index.md
       - Consent: explanation/consent.md

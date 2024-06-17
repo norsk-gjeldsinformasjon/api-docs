@@ -39,3 +39,18 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+nav:
+  - Home: index.md
+  - How-to:
+      - How-to: howto/index.md
+      - Choose integration: howto/select_integration.md
+      - Authorize: howto/consent_authorize.md
+      - Contribute: howto/contributing.md
+  - Get started: get-started/index.md
+  - Explanations:
+      - Explanations: explanation/index.md
+      - Consent: explanation/consent.md
+  - Reference:
+      - Consent reference: reference/consent.md
+      - Consent flows: reference/consent_flows.md
+      - Index: reference/index.md

@@ -23,11 +23,7 @@ There are two ways to ask users to issue a consent: _regular consent_ and _integ
 
 Norsk Gjeldsinformasjon handles the consent process. The user is redirected from your platform to Norsk Gjeldsinformasjon. The user will have to identify in ID-porten and confirm the consent before being redirected back to your platform.
 
-See: [How to get started with regular consent](get_started_regular.md)
-
 
 ### Integrated consent
 
 You handle the consent process yourself. You are responsible for sufficently identifying the user and managing the consents. The benefit of this option is that the user does not leave your platform.
-
-See: [How to get started with integrated consent](get_started_integrated.md)

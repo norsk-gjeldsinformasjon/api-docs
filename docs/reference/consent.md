@@ -359,8 +359,6 @@ documented [here](../reference/openapi.md/#operations-tag-Debt_Api).
 
 ## 5 - Read updates about consents
 
-**This feature is currently only available in the preprod environment.**
-
 Updates to consents are available as a feed for customers of the consent service.
 
 This service can be used to "subscribe" to changes instead of checking the status of each individual consent you have registered.

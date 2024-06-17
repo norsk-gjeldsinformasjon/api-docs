@@ -9,7 +9,7 @@ Provide in-depth information to help users understand concepts, mechanisms, or p
 [comment]: # (FAQ should be moved to its own page if this page/section gets crowded)
 ## FAQ
 
-### How do I start using a service?
+### <a name="how-do-i-start"></a> How do I start using a service?
 
 Reach out to [Norsk Gjeldsinformasjon](https://www.norskgjeld.no/kontakt-oss/) for more information about using one of our services.
 

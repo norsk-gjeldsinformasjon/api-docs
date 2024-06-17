@@ -39,10 +39,16 @@ Consents can become inactive for different reasons
 
 ## Authorization
 
+When calling Norsk Gjeldsinformasjon Consent API you will need to provide an access token. This is a token that references who you are (your cientId) and what you should have access to.
+
+See: [How do I authorize](../howto/consent_authorize.md)
+
+If you integrate using *regular consent, Authorization Code Flow*, you will not need to call Consent API directly and authorizing will not be relevant for your use case.
+
 ### Does the token endpoint return id tokens?
 
 Token endpoint does not deliver id tokens. To verify the identity of the user you can check the identity-number which is delivered in the debt response json.
 
 ### Does the token endpoint return refresh tokens?
 
-No, the token endpoint does not deliver refresh tokens. To collect debt information with a consent for an extended duration you will have to obtain an access token from the token endpoint using the client [credentials flow](../reference/consent_flows.md).
+No, the token endpoint does not deliver refresh tokens. To collect debt information with a consent for an extended duration you will have to obtain an access token from the token endpoint using the [client credentials flow](../reference/consent_flows.md#client-credentials-flow).

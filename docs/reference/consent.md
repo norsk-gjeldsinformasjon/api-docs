@@ -66,6 +66,8 @@ the [debt API](openapi.md#debt-api).
 
 ### 2.3 - Flows
 
+<!-- Flows moved to: reference/consent_flows.md -->
+
 We are using two OAuth2.0 flows, Authorization Code and Client Credentials.
 
 #### 2.3.1 Authorization Code Flow

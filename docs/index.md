@@ -20,11 +20,11 @@ This information can be viewed by individuals by logging in to ["Min Gjeld"](htt
 
 ### Accessing debt with consent from individuals
 
-Individuals can consent to allowing financial institutions to access information about their unsecured debt.
+Individuals can consent to allowing organizations to access information about their unsecured debt.
 
 An overview of consents and how they are used is available for the user by logging in to ["Min Gjeld"](https://www.norskgjeld.no/)
 
-Financial institutions that want to display an individuals debt or assess an individuals creditworthiness can establish an integration to Norsk Gjeldsinformasjon.
+Organizations that want to display an individuals debt or assess an individuals creditworthiness can establish an integration to Norsk Gjeldsinformasjon.
 
 
 ### Credit bureaus and lenders

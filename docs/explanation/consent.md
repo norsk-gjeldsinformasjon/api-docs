@@ -1,6 +1,6 @@
 # Consents explained
 
-Individuals can consent to share information about their debt with other organizations. When a user have consented, the organization will be able to look up information about the individuals debt. Consents have a defined purpose which limits what the information should be used for.
+Individuals can consent to share information about their debt with other organizations. When a user has consented, the organization will be able to look up information about the individuals debt. Consents have a defined purpose which limits what the information should be used for.
 
 ## <a name="client-revokes-consent"></a> Notify Norsk Gjeldsinformasjon when your customers/users revokes consent
 
@@ -14,8 +14,8 @@ Note that users can also revoke consents when logged inn on [norskgjeld.no](http
 
 There are two ways you can find out if a consent is inactive. Which one you choose depends on your needs:
 
-1. You can call our API and check the state of a consent
-2. You can poll our API and receive a change feed with events for consents given to you
+1. You can call our API and check the state of a specific consent
+2. You can poll our API and receive a change feed with events for all consents given to you
 
 ### I need to check the current state of a consent
 
@@ -33,7 +33,7 @@ You can also be notified about changes to consents as they happen by subscribing
 Consents can become inactive for different reasons
 
 - Single use consents expire after use
-- Consent expiration time have passed
+- Consent expiration time has passed
 - User revokes consent through your service
 - User revokes consent at norskgjeld.no
 

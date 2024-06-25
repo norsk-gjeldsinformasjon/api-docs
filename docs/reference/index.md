@@ -19,7 +19,7 @@ We currently offer these scopes:
 
 ## Consent duration
 
-Consents can requested with a duration. A duration specifies *how long* the organization can look up information about debt. If no duration in specified, then a single-use scope will be created. This scope can be used within a few minutes and only used once.
+Consents can be requested with a duration. A duration specifies *how long* the organization can look up information about debt. If no duration in specified, then a single-use scope will be created. This scope can be used within a few minutes and only used once.
 
 Note that individuals can withdraw consents at any time.
 

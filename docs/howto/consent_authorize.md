@@ -31,11 +31,11 @@ Access-tokens are requested by POSTing a reguest to the /token endpoint:
 
 To request an access token using client credentials, you make a HTTP POST to the /token endpoint and provide the following parameters:
 
-| Parameter  | Description                                                        |
-|------------|--------------------------------------------------------------------|
-| grant_type | Must be set to “client_credentials”                                |
-| audience   | <!-- TODO: Link --> See reference for the service you want to call |
-| scope      | <!-- TODO: Link --> See reference for the service you want to call |
+| Parameter  | Description                                                                                                                |
+|------------|----------------------------------------------------------------------------------------------------------------------------|
+| grant_type | Must be set to “client_credentials”                                                                                        |
+| audience   | [See reference for the service you want to call](../reference/index.md#reference-consent-authorization-audience-and-scope) |
+| scope      | [See reference for the service you want to call](../reference/index.md#reference-consent-authorization-audience-and-scope) |
 
 Example response:
 

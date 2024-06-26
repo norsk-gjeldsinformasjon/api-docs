@@ -31,7 +31,7 @@ Note that individuals can withdraw consents at any time.
 Duration is specified by appending the number to the scope. Example: `debt.unsecured.presentation.100` to specify a presentation scope that should be active for 100 days.
 
 
-## Consent authorization audience and scope
+## <a name="reference-consent-authorization-audience-and-scope"></a> Consent authorization audience and scope
 
 These are used as parameters when requesting an access token for using parts of the API.
 

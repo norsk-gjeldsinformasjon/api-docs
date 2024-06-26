@@ -47,6 +47,7 @@ nav:
       - Choose integration: howto/choose_integration.md
       - Authorize: howto/consent_authorize.md
       - Contribute: howto/contributing.md
+      - Look up debt with consent: howto/lookup-consent.md
   - Reference:
       - Reference: reference/index.md
       - Consent reference: reference/consent.md

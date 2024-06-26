@@ -17,3 +17,9 @@ Visit https://norsk-gjeldsinformasjon.github.io/api-docs/
     source env/bin/activate
     pip install -r requirements.txt
     mkdocs serve
+
+## Adding mkdocs menu items
+
+Because we want to control the order of menu items (left side menu), the menu
+is defined in `mkdocs.yml`. When adding a new page, it should also be added
+to where it belongs in this file.

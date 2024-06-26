@@ -30,6 +30,18 @@ Note that individuals can withdraw consents at any time.
 
 Duration is specified by appending the number to the scope. Example: `debt.unsecured.presentation.100` to specify a presentation scope that should be active for 100 days.
 
+
+## Consent authorization audience and scope
+
+These are used as parameters when requesting an access token for using parts of the API.
+
+| Service            | Audience                                                                                                      | Scope                                                        |
+|--------------------|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| Integrated consent | `https://api-preprod.norskgjeld.no/v1/consent/agreement`<br/>`https://api.norskgjeld.no/v1/consent/agreement` | `consent.create`                                             |
+| Consent events     | `https://api-preprod.norskgjeld.no/feed/v1/consent`<br/>`https://api.norskgjeld.no/feed/v1/consent`           | `client.access.consent.events`                               |
+| Debt lookup        | `https://api-preprod.norskgjeld.no/v1/debt`<br/>`https://api.norskgjeld.no/v1/debt`                           | `debt.unsecured.presentation` or `debt.unsecured.processing` |
+
+
 ## Regular consent flows
 
 We are offering two OAuth2.0 flows, Authorization Code and Client Credentials.

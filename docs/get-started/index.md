@@ -27,13 +27,13 @@ You should decide on what [OAuth 2.0 flow](../reference/index.md) you want to us
 
 You should provide us with:
 
-| Parameter       | Explanation                                                                                                       |
-|-----------------|-------------------------------------------------------------------------------------------------------------------|
-| Organization ID | Your organization ID in Enhetsregisteret                                                                          |
-| Callback URI(s) | The URL(s) you want the browser returned, ex: https://api-eksempel.no/v1/callback                                 |
-| Purpose         | Whether the debt data will be used for `presentation` or `processing`                                             |
-| Duration        | By default, consents are single-use. Specify duration if required. See [duration](../reference/scope_duration.md) |
-| Flow            | The flow you plan on using                                                                                        |
+| Parameter       | Explanation                                                                                              |
+|-----------------|----------------------------------------------------------------------------------------------------------|
+| Organization ID | Your organization ID in Enhetsregisteret                                                                 |
+| Callback URI(s) | The URL(s) you want the browser returned, ex: https://api-eksempel.no/v1/callback                        |
+| Purpose         | Whether the debt data will be used for `presentation` or `processing`                                    |
+| Duration        | By default, consents are single-use. Specify duration if required. See [duration](../reference/index.md) |
+| Flow            | The flow you plan on using                                                                               |
 
 You will receive a clientId and credentials that can be used when talking to our API.
 

@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-You know [how to authorize](../howto/consent_authorize.md) and retrieve access tokens. You have collected consent from a individual.
+You know [how to authorize](../howto/consent_authorize.md) and retrieve access tokens. You have collected consent from an individual.
 
 ## 1. Retrieve access-token
 

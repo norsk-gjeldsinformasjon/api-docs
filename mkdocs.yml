@@ -48,6 +48,7 @@ nav:
       - Authorize: howto/consent_authorize.md
       - Contribute: howto/contributing.md
       - Look up debt with consent: howto/lookup-consent.md
+      - Get notified about changes to consents: howto/events-consent.md
   - Reference:
       - Reference: reference/index.md
       - Consent reference: reference/consent.md
@@ -55,3 +56,4 @@ nav:
   - Explanations:
       - Explanations: explanation/index.md
       - Consent: explanation/consent.md
+      - Consuming event feeds: explanation/consume-events-feed.md

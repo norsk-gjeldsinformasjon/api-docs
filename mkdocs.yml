@@ -1,4 +1,5 @@
 site_name: Developer Docs
+site_url: https://norsk-gjeldsinformasjon.github.io/api-docs
 repo_url: https://github.com/norsk-gjeldsinformasjon/api-docs
 repo_name: api-docs
 theme:

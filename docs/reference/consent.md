@@ -375,3 +375,7 @@ NOTE: The sequence numbers are not guaranteed to be contiguous. You might receiv
 The sequence numbers 9-12 are not missing.
 
 The API is defined [here](openapi.md#operations-tag-Consents_Feed_API).
+
+### 5.1 Example implementation
+
+An example implementation of fetching updates to consents in python can be found [here](assets/fetch-feed.py)

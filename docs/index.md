@@ -29,6 +29,6 @@ Organizations that want to display an individuals debt or assess an individuals 
 
 ### Credit bureaus and lenders
 
-These organizations can establish an integration with Norsk Gjeldsinformasjon in order to assess creditworthiness when considering an application for credit. This is only available for financial institutions. Regular companies that have a need to evaluate creditwothiness (e.g. telecom companies) will not have access to this service.
+These organizations can establish an integration with Norsk Gjeldsinformasjon in order to assess creditworthiness when considering an application for credit. This is only available for financial institutions. Regular companies that have a need to evaluate creditworthiness (e.g. telecom companies) will not have access to this service.
 
 Which companies and institutions that can access this information is regulated in gjeldsinformasjonsloven.

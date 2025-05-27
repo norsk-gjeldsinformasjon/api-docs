@@ -38,6 +38,8 @@ plugins:
 markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
+  - def_list
+  - md_in_html
   - pymdownx.tabbed:
       alternate_style: true
 nav:

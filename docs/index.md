@@ -37,5 +37,6 @@ Which companies and institutions that can access this information is regulated i
 ### Receiving collected debt info about own customers
 
 Finacial instituions can receive a data package containing all debt for their customers once every fiscal quarter.
+- 
 * Details regarding restrictions to this service - [See domain documentation](https://norskgjeld.atlassian.net/wiki/spaces/GJEL/pages/492273665/API+Data+Packaging+-+collecting+debt+information+about+your+customers)
 * Technical documentation regarding setting up this service - [See our technical documentation](https://norsk-gjeldsinformasjon.github.io/api-docs/howto/recieve_quarterly_debt-reports/)

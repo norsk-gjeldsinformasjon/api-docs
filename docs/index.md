@@ -32,3 +32,10 @@ Organizations that want to display an individuals debt or assess an individuals 
 These organizations can establish an integration with Norsk Gjeldsinformasjon in order to assess creditworthiness when considering an application for credit. This is only available for financial institutions. Regular companies that have a need to evaluate creditworthiness (e.g. telecom companies) will not have access to this service.
 
 Which companies and institutions that can access this information is regulated in gjeldsinformasjonsloven.
+
+
+### Receiving collected debt info about own customers
+
+Finacial instituions can receive a data package containing all debt for their customers once every fiscal quarter.
+* Details regarding restrictions to this service - [See domain documentation](https://norskgjeld.atlassian.net/wiki/spaces/GJEL/pages/492273665/API+Data+Packaging+-+collecting+debt+information+about+your+customers)
+* Technical documentation regarding setting up this service - [See our technical documentation](https://norsk-gjeldsinformasjon.github.io/api-docs/howto/recieve_quarterly_debt-reports/)

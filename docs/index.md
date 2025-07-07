@@ -1,12 +1,19 @@
 # Norsk Gjeldsinformasjon technical reference
 
-Norsk Gjeldsinformasjon is a debt registry which collects information about individuals unsecured debt from various financial institutions. We provide lenders and individuals with an overview of unsecured debt, which can include credit card debt, personal loans, and other forms of non-secured borrowing.
+Norsk Gjeldsinformasjon AS is established by the financial institutions in
+Norway, so that the industry has its own supplier of debt information. The
+company has a license from the Ministry of Children and Families and is under
+the supervision of The Financial Supervisory Authority of Norway (FSA). All
+finance institutions that offer unsecured debt to consumers in Norway must
+make their debt information available to us according to the Norwegian [debt
+information law](https://lovdata.no/dokument/NL/lov/2017-06-16-47).
 
-Norsk Gjeldsinformasjon aims to improve transparency in the financial sector, helping lenders assess the creditworthiness of borrowers more accurately. By providing comprehensive debt information, Norsk Gjeldsinformasjon helps prevent individuals from taking on unsustainable levels of debt and supports responsible lending practices. It is part of a broader effort in Norway to promote financial stability and consumer protection.
-
-Migration of the public documentation is currently a work in progress,
-the documentation that is not yet migrated can be found
-[on confluence](https://norskgjeld.atlassian.net/wiki/spaces/GJEL/overview)
+We have established a national infrastructure based on modern technology for
+collection and distribution of debt information. Debt information is offered to
+financial institutions and others who have the authority to obtain such
+information. We offer a secure, stable and user-friendly solution.
+Migration of the public documentation is currently a work in progress, the
+documentation that is not yet migrated can be found [on confluence](https://norskgjeld.atlassian.net/wiki/spaces/GJEL/overview).
 
 
 ## Offerings

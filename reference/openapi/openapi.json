@@ -1,0 +1,1251 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Agreement API",
+    "description": "API for registering consent where a person have consented to share information about their debt.",
+    "contact": {
+      "name": "Norsk Gjeldsinformasjon",
+      "url": "https://norskgjeld.no",
+      "email": "support@norskgjeld.no"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://api-preprod.norskgjeld.no",
+      "description": "Preproduction environment"
+    },
+    {
+      "url": "https://api.norskgjeld.no",
+      "description": "Production environment"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Agreement API",
+      "x-displayName": "Agreement API"
+    },
+    {
+      "name": "Consents Feed API",
+      "x-displayName": "Consents Feed API"
+    },
+    {
+      "name": "Debt Api",
+      "x-displayName": "Debt Api"
+    }
+  ],
+  "externalDocs": {
+    "description": "Norskgjeld public documentation",
+    "url": "https://norskgjeld.atlassian.net/wiki/spaces/GJEL/overview"
+  },
+  "paths": {
+    "/v1/consent/agreement": {
+      "put": {
+        "tags": [
+          "Agreement API"
+        ],
+        "summary": "Register a consent",
+        "description": "When a valid consent have been given by a person, this service can be called to create consent at Norsk Gjeldsinformasjon. Consents created and information about their use will also be visible to the person when logged in at norskgjeld.no",
+        "operationId": "createConsent",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsentRequestDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Consent was successfully registered",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateConsentResponseDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request. Please fix your request and try again. The response might contain an error description",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpringErrorSchema"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Request was unauthorized"
+          },
+          "403": {
+            "description": "You are not allowed to register this consent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpringErrorSchema"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "This consent (represented by 'client_consent_id') is already registered with some other data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpringErrorSchema"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Some internal error occurred. You might try again with the same request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpringErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "consent.create"
+            ]
+          }
+        ]
+      }
+    },
+    "/feed/v1/consent": {
+      "get": {
+        "tags": [
+          "Consents Feed API"
+        ],
+        "summary": "Returns the events from 'fromSequenceNr' (included), limited to 'limit' nr of events",
+        "operationId": "feed",
+        "parameters": [
+          {
+            "name": "fromSequenceNr",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response OK with two events",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SamtykkeFeedResponseDTO"
+                },
+                "examples": {
+                  "fromSequenceNr=1, limit=2": {
+                    "description": "When polling, the start point in the feed is indicated by the `fromSequenceNr`\n                            request parameter, and the number of events to poll is specified with the `limit` request\n                            parameter.",
+                    "value": {
+                      "startSequenceNr": 1,
+                      "endSequenceNr": 2,
+                      "generatedAt": "2024-05-21T12:51:57.383110992Z",
+                      "result": [
+                        {
+                          "sequenceNr": 1,
+                          "eventId": "a499c700-7e36-4bd5-9b6b-19024b4f94f9",
+                          "consentId": "c8ff2ad5-4140-481d-a7cd-6c7deee7203c",
+                          "timestamp": "2024-05-20T12:51:52.184886875Z",
+                          "eventType": "SAMTYKKE_OPPRETTET",
+                          "samtykkeOpprettetEvent": {
+                            "clientId": "f8c4da9f-4c93-4904-8de4-b5942776f9c2",
+                            "consentId": "c8ff2ad5-4140-481d-a7cd-6c7deee7203c",
+                            "scope": "debt.unsecured.presentation",
+                            "externalConsentId": "cddda7ed-33be-432e-90d2-0179fbf60cb7"
+                          },
+                          "samtykkeArkivertEvent": null
+                        },
+                        {
+                          "sequenceNr": 2,
+                          "eventId": "47e34ae1-022f-46d4-b3e5-e8ef2dd2761c",
+                          "consentId": "c8ff2ad5-4140-481d-a7cd-6c7deee7203c",
+                          "timestamp": "2024-05-21T12:51:53.334608446Z",
+                          "eventType": "SAMTYKKE_ARKIVERT",
+                          "samtykkeOpprettetEvent": null,
+                          "samtykkeArkivertEvent": {
+                            "clientId": "f8c4da9f-4c93-4904-8de4-b5942776f9c2",
+                            "consentId": "cddda7ed-33be-432e-90d2-0179fbf60cb7"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "fromSequenceNr=3, limit=2": {
+                    "description": "The next poll starts after the most recent event received. `fromSequenceNr` is\n                            typically the highest sequenceNr the client have seen + 1. The number of events to poll is\n                            specified with the `limit` request parameter.",
+                    "value": {
+                      "startSequenceNr": 3,
+                      "endSequenceNr": 4,
+                      "generatedAt": "2024-05-21T13:40:05.334608446Z",
+                      "result": [
+                        {
+                          "sequenceNr": 3,
+                          "eventId": "9634f284-22e7-43a9-bd87-219128a986cb",
+                          "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
+                          "timestamp": "2024-05-21T13:00:05.214282916Z",
+                          "eventType": "SAMTYKKE_OPPRETTET",
+                          "samtykkeOpprettetEvent": {
+                            "clientId": "f8c4da9f-4c93-4904-8de4-b5942776f9c2",
+                            "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
+                            "scope": "debt.unsecured.presentation",
+                            "externalConsentId": "40718443-2b30-42f4-b401-5d50d0e4fce3"
+                          },
+                          "samtykkeArkivertEvent": null
+                        },
+                        {
+                          "sequenceNr": 4,
+                          "eventId": "cb7e1a19-107f-4860-a9ea-d8106a16e8a1",
+                          "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
+                          "timestamp": "2024-05-21T13:12:52.266725880Z",
+                          "eventType": "SAMTYKKE_OPPRETTET",
+                          "samtykkeOpprettetEvent": {
+                            "clientId": "f8c4da9f-4c93-4904-8de4-b5942776f9c2",
+                            "consentId": "ae4a7b61-4c21-4ef2-a0d5-cd6647fa2950",
+                            "scope": "debt.unsecured.presentation",
+                            "externalConsentId": "9bb63979-2a44-49ad-accb-cb54d418dd4f"
+                          },
+                          "samtykkeArkivertEvent": null
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feed/v1/consent/lastSequenceNr": {
+      "get": {
+        "tags": [
+          "Consents Feed API"
+        ],
+        "summary": "Returns the last ('newest') sequence number in the event feed",
+        "operationId": "lastSequenceNr",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/LastSequenceNrResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feed/v1/consent/firstSequenceNr": {
+      "get": {
+        "tags": [
+          "Consents Feed API"
+        ],
+        "summary": "Returns the first ('oldest') sequence number in the event feed",
+        "operationId": "firstSequenceNr",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/FirstSequenceNrResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/debt": {
+      "get": {
+        "tags": [
+          "Debt Api"
+        ],
+        "summary": "Get debt information with Access token granted in authorization code flow",
+        "description": "When the access token is granted as a part of an OAuth2 Authorization code flow it contains information about the user and it is therefore enough to provide the access token to collect debt information",
+        "operationId": "getDebtWithAuthCodeToken",
+        "security": [
+          {
+            "OAuth2_Authorization_code_flow": [
+              "debt.unsecured.presentation.180",
+              "debt.unsecured.presentation",
+              "debt.unsecured.processing",
+              "debt.unsecured.processing.28"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access token received from the auth server by using the authorization code flow",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer osbj5aJNmLhzRH_IxdDdiKUycGFHncWxYVT9vsdWpy8.ViC0zK6sv83LOxmd2oIunMgRcSKgEe6O9IXymQ5kxww"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched debt info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/debt_information"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request, missing required parameter(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid access token or no valid consent present",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                },
+                "examples": {
+                  "ForbiddenError": {
+                    "value": {
+                      "error": "no valid consent",
+                      "trace_id": "4d2e5329-fe0a-4d20-b22b-z300a24321247",
+                      "timestamp": "2021-02-26T09:27:47.852005Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                },
+                "examples": {
+                  "serverError": {
+                    "value": {
+                      "error": "server error",
+                      "error_description": "An unexpected server error occurred",
+                      "trace_id": "4d2e5329-fe0a-4d20-b22b-z300a273c0247",
+                      "timestamp": "2021-02-26T09:27:47.852005Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/debt/{id}": {
+      "get": {
+        "tags": [
+          "Debt Api"
+        ],
+        "summary": "Get debt information by ID",
+        "operationId": "getDebtWithConsentID",
+        "security": [
+          {
+            "OAuth2_Client_credential": [
+              "debt.unsecured.presentation",
+              "debt.unsecured.processing"
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access token received from the auth server with a client credential grant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer 4GWrtt33o6cPVaLic04g9V4uaQgjmELlWpfVJPwVOqU.Z8FQXRKZDIP3ONPkD7FVQ8Jols3qNVUQ315GOcdTqBQ"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the consent",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "9c2a58dd-c0ea-4243-9b0f-baef670e7043"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched debt info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/debt_information"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request, missing required parameter(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid access token or no valid consent present",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                },
+                "examples": {
+                  "invalidConsent": {
+                    "value": {
+                      "error": "invalid consent",
+                      "error_description": "Consent expired at 2021-02-26T09:31:07.265053Z",
+                      "trace_id": "6a933299-740d-4563-970e-795610cf810a",
+                      "timestamp": "2021-02-26T09:31:25.109057Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                },
+                "examples": {
+                  "serverError": {
+                    "value": {
+                      "error": "server error",
+                      "error_description": "An unexpected server error occurred",
+                      "trace_id": "4d2e5329-fe0a-4d20-b22b-300a273c0247",
+                      "timestamp": "2021-02-26T09:27:47.852005Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Debt Api"
+        ],
+        "summary": "Revoke a consent by ID",
+        "operationId": "revokeConsentByID",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access token received from the auth server with a client credential grant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer 4GWrtt33o6cPVaLic04g9V4uaQgjmELlWpfVJPwVOqU.Z8FQXRKZDIP3ONPkD7FVQ8Jols3qNVUQ315GOcdTqBQ"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the consent which is to be revoked",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "9c2a58dd-c0ea-4243-9b0f-baef670e7043"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Consent revoked"
+          },
+          "400": {
+            "description": "Bad request, missing required parameter(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid access token or no valid consent present",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                },
+                "examples": {
+                  "invalidConsent": {
+                    "value": {
+                      "error": "invalid consent",
+                      "error_description": "Consent expired at 2021-02-26T09:31:07.265053Z",
+                      "trace_id": "6a933299-740d-4563-970e-795610cf810a",
+                      "timestamp": "2021-02-26T09:31:25.109057Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                },
+                "examples": {
+                  "serverError": {
+                    "value": {
+                      "error": "server error",
+                      "error_description": "An unexpected server error occurred",
+                      "trace_id": "4d2e5329-fe0a-4d20-b22b-300a273c0247",
+                      "timestamp": "2021-02-26T09:27:47.852005Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/debt/{id}/status": {
+      "get": {
+        "tags": [
+          "Debt Api"
+        ],
+        "summary": "Get consent status by ID",
+        "operationId": "getConsentStatusWithID",
+        "security": [
+          {
+            "OAuth2_Client_credential": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access token received from the auth server with a client credential grant",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer 4GWrtt33o6cPVaLic04g9V4uaQgjmELlWpfVJPwVOqU.Z8FQXRKZDIP3ONPkD7FVQ8Jols3qNVUQ315GOcdTqBQ"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the consent",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "9c2a58dd-c0ea-4243-9b0f-baef670e7043"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully fetched consent status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/consent_status"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request, missing required parameter(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                },
+                "examples": {
+                  "UnauthorizedError": {
+                    "value": {
+                      "error": "Invalid access token",
+                      "trace_id": "4d2e5329-fe0a-4d20-b22b-z300a24321247",
+                      "timestamp": "2021-02-26T09:27:47.852005Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unknown server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error"
+                },
+                "examples": {
+                  "serverError": {
+                    "value": {
+                      "error": "server error",
+                      "error_description": "An unexpected server error occurred",
+                      "trace_id": "4d2e5329-fe0a-4d20-b22b-300a273c0247",
+                      "timestamp": "2021-02-26T09:27:47.852005Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SpringErrorSchema": {
+        "required": [
+          "error",
+          "path",
+          "requestId",
+          "status",
+          "timestamp"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "Status code of the response",
+            "format": "int32"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "Timestamp of the response (ISO-8601 formatted)",
+            "format": "date-time"
+          },
+          "path": {
+            "type": "string",
+            "description": "The endpoint path of the failed request",
+            "format": "uri"
+          },
+          "error": {
+            "type": "string",
+            "description": "Short description of the error"
+          },
+          "message": {
+            "type": "string",
+            "description": "More detailed description of the error"
+          },
+          "requestId": {
+            "type": "string",
+            "description": "The request ID"
+          }
+        }
+      },
+      "CreateConsentRequestDTO": {
+        "required": [
+          "client_consent_id",
+          "consent_duration_days",
+          "nin",
+          "scope_of_consent"
+        ],
+        "type": "object",
+        "properties": {
+          "nin": {
+            "type": "string",
+            "description": "Norwegian national identity number",
+            "example": "12829499914"
+          },
+          "scope_of_consent": {
+            "type": "string",
+            "description": "The scope of consent (e.g. presentation)",
+            "enum": [
+              "debt.unsecured.presentation",
+              "debt.unsecured.processing"
+            ]
+          },
+          "consent_duration_days": {
+            "type": "integer",
+            "description": "The consent duration (in days)",
+            "format": "int32",
+            "example": 100
+          },
+          "client_consent_id": {
+            "type": "string",
+            "description": "The ID for the consent stored on your side. Must be unique",
+            "example": "e91fcf4c-cfbd-4d59-91e3-71da7a498cac"
+          }
+        }
+      },
+      "ConsentResponseDTO": {
+        "required": [
+          "expires_at",
+          "id",
+          "scope_of_consent"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for Norsk Gjeldsinformasjons stored consent. Use this id when referring to the consent in other NoGi APIs",
+            "example": "0dcec3d5-6844-4d2c-b972-83086064b111"
+          },
+          "expires_at": {
+            "type": "string",
+            "description": "Expiry time of the consent (ISO-8601 formatted)",
+            "format": "date-time",
+            "example": "2018-01-10T06:14:00Z"
+          },
+          "scope_of_consent": {
+            "type": "string",
+            "description": "Scope of the generated consent",
+            "enum": [
+              "debt.unsecured.presentation",
+              "debt.unsecured.processing"
+            ]
+          }
+        }
+      },
+      "CreateConsentResponseDTO": {
+        "required": [
+          "client_consent_id",
+          "consent"
+        ],
+        "type": "object",
+        "properties": {
+          "client_consent_id": {
+            "type": "string",
+            "description": "The id for the consent on _your_ side. Will be the same as 'client_consent_id' in the request",
+            "example": "e91fcf4c-cfbd-4d59-91e3-71da7a498cac"
+          },
+          "consent": {
+            "$ref": "#/components/schemas/ConsentResponseDTO"
+          }
+        }
+      },
+      "SamtykkeArkivertEventDTO": {
+        "required": [
+          "clientId",
+          "consentId"
+        ],
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "description": "The client that this consent was given to",
+            "format": "uuid",
+            "example": "a1e533a5-6311-40c6-9db0-93fe37baab14"
+          },
+          "consentId": {
+            "type": "string",
+            "description": "This events corresponding 'consentId'. Can be used to figure out the proper enduser",
+            "format": "uuid",
+            "example": "dffe8795-4a91-4729-9fc8-68c42b33eb00"
+          }
+        },
+        "description": "The event content if event is of type SAMTYKKE_ARKIVERT"
+      },
+      "SamtykkeFeedEventDTO": {
+        "required": [
+          "consentId",
+          "eventId",
+          "eventType",
+          "sequenceNr",
+          "timestamp"
+        ],
+        "type": "object",
+        "properties": {
+          "sequenceNr": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "This events sequenceNr",
+            "format": "int64",
+            "example": 12356
+          },
+          "eventId": {
+            "type": "string",
+            "description": "This events id",
+            "format": "uuid",
+            "example": "a132b02b-f543-4e35-9f46-60ba598da886"
+          },
+          "consentId": {
+            "type": "string",
+            "description": "This events corresponding 'consentId'. Can be used to figure out the proper enduser",
+            "format": "uuid",
+            "example": "5826f424-1848-4fc3-bb60-1bfca8f4a701"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "When the event occurred (ISO-8601)",
+            "format": "date-time",
+            "example": "2024-05-16T14:50:44.27Z"
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The event type",
+            "enum": [
+              "SAMTYKKE_OPPRETTET",
+              "SAMTYKKE_ARKIVERT"
+            ]
+          },
+          "samtykkeOpprettetEvent": {
+            "$ref": "#/components/schemas/SamtykkeOpprettetEventDTO"
+          },
+          "samtykkeArkivertEvent": {
+            "$ref": "#/components/schemas/SamtykkeArkivertEventDTO"
+          }
+        },
+        "description": "The actual events"
+      },
+      "SamtykkeFeedResponseDTO": {
+        "required": [
+          "endSequenceNr",
+          "generatedAt",
+          "result",
+          "startSequenceNr"
+        ],
+        "type": "object",
+        "properties": {
+          "startSequenceNr": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "The start sequence number (included) for this response",
+            "format": "int64",
+            "example": 1
+          },
+          "endSequenceNr": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "The last (included) sequence number for this response",
+            "format": "int64",
+            "example": 2
+          },
+          "generatedAt": {
+            "type": "string",
+            "description": "Timestamp for when this response was generated (ISO-8601)",
+            "format": "date-time",
+            "example": "2024-05-13T14:30:00.123Z"
+          },
+          "result": {
+            "type": "array",
+            "description": "The actual events",
+            "items": {
+              "$ref": "#/components/schemas/SamtykkeFeedEventDTO"
+            }
+          }
+        }
+      },
+      "SamtykkeOpprettetEventDTO": {
+        "required": [
+          "clientId",
+          "consentId",
+          "scope"
+        ],
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "description": "The client that this consent has been given to",
+            "format": "uuid",
+            "example": "a1e533a5-6311-40c6-9db0-93fe37baab14"
+          },
+          "consentId": {
+            "type": "string",
+            "description": "This events corresponding 'consentId'. Can be used to figure out the proper enduser",
+            "format": "uuid",
+            "example": "07c1fa64-30a5-4066-8b6f-37a3fa1c83f9"
+          },
+          "scope": {
+            "type": "string",
+            "description": "Indicates which type of consent the user agreed to",
+            "example": "debt.unsecured.presentation"
+          },
+          "externalConsentId": {
+            "type": "string",
+            "description": "Clients reference to this consent",
+            "example": "consent-123"
+          }
+        },
+        "description": "The event content if event is of type SAMTYKKE_OPPRETTET"
+      },
+      "LastSequenceNrResponse": {
+        "required": [
+          "lastSequenceNr"
+        ],
+        "type": "object",
+        "properties": {
+          "lastSequenceNr": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "The last ('newest') sequence number"
+      },
+      "FirstSequenceNrResponse": {
+        "required": [
+          "firstSequenceNr"
+        ],
+        "type": "object",
+        "properties": {
+          "firstSequenceNr": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "The first ('oldest') sequence number"
+      },
+      "debt_information": {
+        "type": "object",
+        "properties": {
+          "consent": {
+            "$ref": "#/components/schemas/consent_metadata"
+          },
+          "ssn": {
+            "type": "string",
+            "description": "Norwegian national identity number.",
+            "example": "01017012345"
+          },
+          "loans": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "creditorName": {
+                  "type": "string",
+                  "description": "Name of creditor",
+                  "example": "NORSK GJELDSINFORMASJON AS"
+                },
+                "loan": {
+                  "nullable": true,
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/credit_facility"
+                    },
+                    {
+                      "$ref": "#/components/schemas/repayment_loan"
+                    },
+                    {
+                      "$ref": "#/components/schemas/charge_cards"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "numberOfCreditorsAnswered": {
+            "type": "integer",
+            "description": "How many of the creditors of the loan applicant that answered the request",
+            "example": 3
+          },
+          "numberOfcreditorsMissing": {
+            "type": "integer",
+            "description": "How many of the creditors of the loan applicant that did not answer the request. When this is greater than 0, each unanswered loan will be reported as null.",
+            "example": 1
+          }
+        }
+      },
+      "credit_facility": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "type of loan",
+            "example": "creditFacility"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "Timestamp for when the data payload was extracted from the system and processed in this object. Do not use the timestamp for the last account transaction/movement. Timestamp is ISO 8601-formatted date and time.",
+            "example": "2018-02-05T12:54:12Z"
+          },
+          "coBorrower": {
+            "type": "integer",
+            "description": "2=Has co-borrower, 1=Is co-borrower, 0=No coBorrower",
+            "example": 0
+          },
+          "creditLimit": {
+            "type": "integer",
+            "description": "The maximum credit for the loan. Amount defined in NOK. (100 NOK encoded as 10000)",
+            "example": 1200000
+          },
+          "interestBearingBalance": {
+            "type": "integer",
+            "description": "The interest-bearing balance for the credit facility. Amount defined in NOK.If the balance is negative (FI owes customer money), a balance of 0 should be reported. (100 NOK encoded as 10000)",
+            "example": 123100
+          },
+          "nonInterestBearingBalance": {
+            "type": "integer",
+            "description": "The non-interest-bearing balance for the credit facility. Non-interest-bearing balance is calculated by subtracting interest-bearing balance from booked balance. Amount defined in NOK.  If the balance is negative (FI owes customer money), a balance of 0 should be reported.(100 NOK encoded as 10000)",
+            "example": 1453900
+          },
+          "nominalInterestRate": {
+            "type": "integer",
+            "description": "The nominal interest rate of the credit facility. (10.20 % is encoded as 1020.)",
+            "example": 1000
+          },
+          "installmentCharges": {
+            "type": "integer",
+            "description": "Installment charges related to the credit facility. (100 NOK encoded as 10000)",
+            "example": 10000
+          },
+          "installmentChargePeriod": {
+            "type": "string",
+            "description": "Charges is be reported as a monthly charge/fee. Those using other intervals must recalculate to a monthly charge. Quarterly charges of 300 NOK should be reported as: 300 NOK divided by 3 months = 100 NOK monthly charges. If there is a combination of monthly and other (twice a year, yearly etc.), add up to yearly, and divide by 12 months.",
+            "example": "MONTHLY",
+            "enum": [
+              "MONTHLY",
+              "QUARTERLY",
+              "HALF-YEARLY",
+              "YEARLY"
+            ]
+          }
+        }
+      },
+      "repayment_loan": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "type of loan",
+            "example": "repaymentLoan"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "Timestamp for when the data payload was extracted from the system and processed in this object. Do not use the timestamp for the last account transaction/movement. Timestamp is ISO 8601-formatted date and time.",
+            "example": "2018-02-05T12:54:12Z"
+          },
+          "coBorrower": {
+            "type": "integer",
+            "description": "2=Has co-borrower, 1=Is co-borrower, 0=No coBorrower",
+            "example": 1
+          },
+          "originalBalance": {
+            "type": "integer",
+            "description": "The original amount of the loan from the date the loan was granted. Amount defined in NOK.  If the balance is negative (FI owes customer money), a balance of 0 should be reported. (100 NOK encoded as 10000)",
+            "example": 1200000
+          },
+          "balance": {
+            "type": "integer",
+            "description": "The balance for the repayment loan. Amount defined in NOK.  If the balance is negative (FI owes customer money), a balance of 0 should be reported. (100 NOK encoded as 10000)",
+            "example": 123100
+          },
+          "terms": {
+            "type": "integer",
+            "description": "Remaining terms for the repayment loan in months.",
+            "example": 3
+          },
+          "nominalInterestRate": {
+            "type": "integer",
+            "description": "The nominal interest rate of the credit facility. (10.20 % is encoded as 1020.)",
+            "example": 1000
+          },
+          "installmentCharges": {
+            "type": "integer",
+            "description": "Installment charges related to the credit facility. (100 NOK encoded as 10000)",
+            "example": 10000
+          },
+          "installmentChargePeriod": {
+            "type": "string",
+            "description": "Charges is be reported as a monthly charge/fee. Those using other intervals must recalculate to a monthly charge. Quarterly charges of 300 NOK should be reported as: 300 NOK divided by 3 months = 100 NOK monthly charges. If there is a combination of monthly and other (twice a year, yearly etc.), add up to yearly, and divide by 12 months.",
+            "example": "MONTHLY",
+            "enum": [
+              "MONTHLY",
+              "QUARTERLY",
+              "HALF-YEARLY",
+              "YEARLY"
+            ]
+          }
+        }
+      },
+      "charge_cards": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "type of loan",
+            "example": "chargeCard"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "Timestamp for when the data payload was extracted from the system and processed in this object. Do not use the timestamp for the last account transaction/movement. Timestamp is ISO 8601-formatted date and time.",
+            "example": "2018-02-05T12:54:12Z"
+          },
+          "coBorrower": {
+            "type": "integer",
+            "description": "2=Has co-borrower, 1=Is co-borrower, 0=No coBorrower",
+            "example": 1
+          },
+          "interestBearingBalance": {
+            "type": "integer",
+            "description": "The interest-bearing balance for the credit facility. Amount defined in NOK.  If the balance is negative (FI owes customer money), a balance of 0 should be reported. (100 NOK encoded as 10000)",
+            "example": 123100
+          },
+          "nonInterestBearingBalance": {
+            "type": "integer",
+            "description": "The non-interest-bearing balance for the credit facility. Non-interest-bearing balance is calculated by subtracting interest-bearing balance from booked balance. Amount defined in NOK.  If the balance is negative (FI owes customer money), a balance of 0 should be reported. 100 NOK encoded as 10000",
+            "example": 145390
+          }
+        }
+      },
+      "consent_metadata": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique ID for the consent.",
+            "example": "cc184bd1-0231-4f69-93eb-49bb37f0f880"
+          },
+          "exp": {
+            "type": "integer",
+            "description": "Consent expiry in epoch time.",
+            "example": 1629195636
+          },
+          "scope": {
+            "type": "string",
+            "description": "The scope the user consented to sharing",
+            "enum": [
+              "debt.unsecured.presentation",
+              "debt.unsecured.processing"
+            ],
+            "example": "debt.unsecured.presentation"
+          }
+        }
+      },
+      "consent_status": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean",
+            "description": "Whether this consent is active",
+            "example": true
+          },
+          "expires_at": {
+            "type": "integer",
+            "description": "Consent expiry in epoch time.",
+            "example": 1629195636
+          }
+        }
+      },
+      "error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "The error",
+            "example": "invalid access token"
+          },
+          "error_description": {
+            "type": "string",
+            "description": "An optional short description of the error that occured",
+            "example": "Access token is expired"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "Time when the error was handled. Timestamp is ISO 8601-formatted date and time.",
+            "example": "2021-02-26T09:27:47.852005Z"
+          },
+          "trace_id": {
+            "type": "string",
+            "description": "Unique id that can be used to fascilitate debugging. Will be set to the value of the X-Trace-ID header if it was provided.",
+            "example": "06ce1bf6-4dab-403c-8df6-c8f4f70e7107"
+          }
+        }
+      },
+      "consent_info": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "string",
+            "description": "The status of consent with the given ID. If no consent was found this will be false",
+            "example": true
+          },
+          "expires_at": {
+            "type": "string",
+            "description": "The expiration date of the consent",
+            "example": "2021-02-26T09:27:47.852005Z"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "OAuth2": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "x-tagGroups": [
+    {
+      "name": "Agreement API",
+      "tags": [
+        "Agreement API"
+      ]
+    },
+    {
+      "name": "Consents Feed API",
+      "tags": [
+        "Consents Feed API"
+      ]
+    },
+    {
+      "name": "Debt API",
+      "tags": [
+        "Debt Api"
+      ]
+    }
+  ]
+}

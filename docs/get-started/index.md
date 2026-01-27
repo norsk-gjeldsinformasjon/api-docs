@@ -17,6 +17,38 @@ Reach out to [Norsk Gjeldsinformasjon](https://www.norskgjeld.no/kontakt-oss/) f
 
 When integrating with Norsk Gjeldsinformasjon, you will initially get access to a preproduction environment.
 
+## Integrated consent
+
+### Preparation
+
+Before using integrated consent, you will need sign up by contacting [Norsk Gjeldsinformasjon](https://www.norskgjeld.no/kontakt-oss/). You will be provided with client credentials to the preproduction environment.
+
+### Authorize
+
+You can test authorization by following [How-to: Authorize](../howto/consent_authorize.md). This is typically handled by a library in production code.
+
+You should now be able to use your credentials to fetch access tokens.
+
+### Register consent
+
+When you have received a consent from an individual, you need to register this with Norsk Gjeldsinformasjon.
+
+This is done by calling `/v1/consent/agreement`.
+
+The consent can now be used to fetch debt information. The individual will see the consent when logged in to "Min Gjeld"
+
+See our [OpenAPI definition](../reference/openapi.md) for details.
+
+### Delete consent
+
+If an individual withdraws their consent, you will need to register this with Norsk Gjeldsinformasjon.
+
+This is done by calling `/v1/debt/{consent-id}`
+
+The consent can no longer be used to fetch debt information. The individual will see the consent as "archived" when logged in to "Min Gjeld"
+
+See our [OpenAPI definition](../reference/openapi.md) for details.
+
 ## Regular consent
 
 ### Preparation
@@ -48,38 +80,5 @@ You should now be able to use your credentials to fetch access tokens.
 ### Fetch debt
 
 To fetch debt, you will need to call `/v1/debt` endpoint and provide an access token from the previous step.
-
-See our [OpenAPI definition](../reference/openapi.md) for details.
-
-
-## Integrated consent
-
-### Preparation
-
-Before using integrated consent, you will need sign up by contacting [Norsk Gjeldsinformasjon](https://www.norskgjeld.no/kontakt-oss/). You will be provided with client credentials to the preproduction environment.
-
-### Authorize
-
-You can test authorization by following [How-to: Authorize](../howto/consent_authorize.md). This is typically handled by a library in production code.
-
-You should now be able to use your credentials to fetch access tokens.
-
-### Register consent
-
-When you have received a consent from an individual, you need to register this with Norsk Gjeldsinformasjon.
-
-This is done by calling `/v1/consent/agreement`.
-
-The consent can now be used to fetch debt information. The individual will see the consent when logged in to "Min Gjeld"
-
-See our [OpenAPI definition](../reference/openapi.md) for details.
-
-### Delete consent
-
-If an individual withdraws their consent, you will need to register this with Norsk Gjeldsinformasjon.
-
-This is done by calling `/v1/debt/{consent-id}`
-
-The consent can no longer be used to fetch debt information. The individual will see the consent as "archived" when logged in to "Min Gjeld"
 
 See our [OpenAPI definition](../reference/openapi.md) for details.

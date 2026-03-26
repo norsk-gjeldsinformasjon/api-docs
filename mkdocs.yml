@@ -48,14 +48,14 @@ nav:
   - Get started: get-started/index.md
   - How-to:
     - How-to: howto/index.md
-    - Choose integration: howto/choose_integration.md
-    - Authorize: howto/consent_authorize.md
+    - Select an integration: "howto/1. Select an integration.md"
+    - Authorize: "howto/2. How do I authorize.md"
+    - Look up debt with consent: "howto/3. Lookup debt with consent.md"
+    - Get notified about changes to consents: "howto/3.1 Get notified about consents.md"
+    - Look up debt without consent: "howto/4. Lookup debt without consent.md"
+    - Receive quarterly debt reports: "howto/5. Recieve quarterly debt reports.md"
+    - Environments & endpoints: "howto/6. Environments & endpoints.md"
     - Contribute: howto/contributing.md
-    - Look up debt with consent: howto/lookup-consent.md
-    - Get notified about changes to consents: howto/events-consent.md
-    - Get sent quarterly debt reports regarding own customers: howto/recieve_quarterly_debt-reports.md
-    - Environments & endpoints: howto/environments.md
-    - Look up debt without consent: howto/lookup-noconsent.md
   - Deliver debt data:
     - Onboarding & scenarios: howto/deliver/onboarding.md
     - Security requirements: howto/deliver/security.md

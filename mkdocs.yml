@@ -57,10 +57,10 @@ nav:
     - Environments & endpoints: "howto/6. Environments & endpoints.md"
     - Contribute: howto/contributing.md
   - Deliver debt data:
-    - Onboarding & scenarios: howto/deliver/onboarding.md
-    - Security requirements: howto/deliver/security.md
-    - API reference: howto/deliver/api-reference.md
-    - Testing & go-live: howto/deliver/testing.md
+    - Onboarding & scenarios: "howto/deliver/Onboarding_&_Scenarios.md"
+    - Security requirements: howto/deliver/Security_requirements.md
+    - API reference: howto/deliver/API_reference.md
+    - Testing & go-live: "howto/deliver/Testing_&_go-live.md"
   - Reference:
     - Reference: reference/index.md
     - Consent reference: reference/consent.md
@@ -69,4 +69,3 @@ nav:
     - Explanations: explanation/index.md
     - Consent: explanation/consent.md
     - Consuming event feeds: explanation/consume-events-feed.md
-    - Delivering debt data: explanation/delivering-debt-data.md

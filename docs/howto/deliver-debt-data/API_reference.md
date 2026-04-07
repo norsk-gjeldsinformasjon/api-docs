@@ -1,4 +1,3 @@
-[deliver-api.md](https://github.com/user-attachments/files/26278576/deliver-api.md)
 # API reference — Delivering debt data
 
 Your system **exposes** `getalldata` and `getDataForSSN` — NoGi calls these. Your system **calls** NoGi's `pushUpdates` endpoint when debt changes.

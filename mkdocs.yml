@@ -36,6 +36,7 @@ plugins:
   - search
 
 markdown_extensions:
+  - admonition
   - pymdownx.details
   - pymdownx.superfences
   - def_list
@@ -50,17 +51,17 @@ nav:
     - How-to: howto/index.md
     - Select an integration: "howto/1. Select an integration.md"
     - Authorize: "howto/2. How do I authorize.md"
-    - Look up debt with consent: "howto/3. Lookup debt with consent.md"
-    - Get notified about changes to consents: "howto/3.1 Get notified about consents.md"
+    - Look up debt with consent:
+      - Look up debt with consent: "howto/3. Lookup debt with consent.md"
+      - Get notified about changes to consents: "howto/3.1 Get notified about consents.md"
     - Look up debt without consent: "howto/4. Lookup debt without consent.md"
     - Receive quarterly debt reports: "howto/5. Recieve quarterly debt reports.md"
     - Environments & endpoints: "howto/6. Environments & endpoints.md"
-    - Contribute: howto/contributing.md
-  - Deliver debt data:
-    - Onboarding & scenarios: "howto/deliver/Onboarding_&_Scenarios.md"
-    - Security requirements: howto/deliver/Security_requirements.md
-    - API reference: howto/deliver/API_reference.md
-    - Testing & go-live: "howto/deliver/Testing_&_go-live.md"
+    - Deliver debt data:
+      - Onboarding & scenarios: "howto/deliver-debt-data/Onboarding_&_Scenarios.md"
+      - Security requirements: howto/deliver-debt-data/Security_requirements.md
+      - API reference: howto/deliver-debt-data/API_reference.md
+      - Testing & go-live: "howto/deliver-debt-data/Testing_&_go-live.md"
   - Reference:
     - Reference: reference/index.md
     - Consent reference: reference/consent.md
@@ -69,3 +70,4 @@ nav:
     - Explanations: explanation/index.md
     - Consent: explanation/consent.md
     - Consuming event feeds: explanation/consume-events-feed.md
+  - Contribute: contributing.md

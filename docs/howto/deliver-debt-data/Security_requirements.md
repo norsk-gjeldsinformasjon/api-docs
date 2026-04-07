@@ -8,13 +8,13 @@ All APIs exchanging debt information must use mutual TLS (mTLS) with valid enter
 
 ## Checklist
 
-- [ ] TLS 1.2 or newer on all your endpoints
-- [ ] Mutual TLS (mTLS) configured — both client and server authenticate
-- [ ] EV or OV TLS certificate on your server endpoint
-- [ ] Enterprise client certificate (SEID 2.0) from Buypass or Commfides
-- [ ] **Separate** certificates for test and production
-- [ ] Buypass root CA bundle installed in your Trusted Root store
-- [ ] Only NSM-recommended cipher suites in use
+- TLS 1.2 or newer on all your endpoints
+- Mutual TLS (mTLS) configured — both client and server authenticate
+- EV or OV TLS certificate on your server endpoint
+- Enterprise client certificate (SEID 2.0) from Buypass or Commfides
+- **Separate** certificates for test and production
+- Buypass root CA bundle installed in your Trusted Root store
+- Only NSM-recommended cipher suites in use
 
 ## Your server TLS certificate
 

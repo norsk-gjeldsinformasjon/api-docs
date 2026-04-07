@@ -1,4 +1,3 @@
-[deliver-testing.md](https://github.com/user-attachments/files/26279643/deliver-testing.md)
 # Testing & go-live
 
 All three API operations must be successfully tested in pre-production before production access is granted.

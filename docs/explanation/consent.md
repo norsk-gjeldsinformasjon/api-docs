@@ -25,7 +25,7 @@ See our [OpenAPI](../reference/openapi.md) documentation for more information.
 
 ### <a name="consent-events"></a> I need to be notified about changes as they happen
 
-You can also be notified about changes to consents as they happen by subscribing to Consent Feed API. See [How do I get notified about changes to consents](../howto/events-consent.md) and the [OpenAPI](../reference/openapi.md) reference for more information.
+You can also be notified about changes to consents as they happen by subscribing to Consent Feed API. See [How do I get notified about changes to consents](../howto/3.1%20Get%20notified%20about%20consents.md) and the [OpenAPI](../reference/openapi.md) reference for more information.
 
 
 ## Inactive or expired consents
@@ -41,7 +41,7 @@ Consents can become inactive for different reasons
 
 When calling Norsk Gjeldsinformasjon Consent API you will need to provide an access token. This is a token that references who you are (your cientId) and what you should have access to.
 
-See: [How do I authorize](../howto/consent_authorize.md)
+See: [How do I authorize](../howto/2.%20How%20do%20I%20authorize.md)
 
 If you integrate using *regular consent, Authorization Code Flow*, you will not need to call Consent API directly and authorizing will not be relevant for your use case.
 

@@ -1,4 +1,3 @@
-[index.md](https://github.com/user-attachments/files/26275616/index.md)
 # Norsk Gjeldsinformasjon technical reference
 
 Norsk Gjeldsinformasjon AS was established by financial institutions in Norway to provide the industry with its own supplier of debt information. The company is licensed by the Ministry of Children and Families and is supervised by the Financial Supervisory Authority of Norway (FSA). All financial institutions that offer unsecured consumer debt in Norway are required, under the [Norwegian Debt Information Act](https://lovdata.no/dokument/NL/lov/2017-06-16-47), to make their debt information available to us.
@@ -22,4 +21,4 @@ Each quarter, you can retrieve debt information for all your loan customers to e
 
 ## Delivering Debt Data
 
-All financial institutions offering unsecured consumer debt must make their debt information available to NoGi daily. See the [Deliver debt data](howto/deliver-onboarding.md) section for complete documentation.
+All financial institutions offering unsecured consumer debt must make their debt information available to NoGi daily. See the [Deliver debt data](howto/deliver/Onboarding_&_Scenarios.md) section for complete documentation.

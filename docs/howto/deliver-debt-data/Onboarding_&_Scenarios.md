@@ -1,4 +1,3 @@
-[deliver-onboarding.md](https://github.com/user-attachments/files/26279544/deliver-onboarding.md)
 # Deliver debt data — Onboarding
 
 Before you can deliver debt data to NoGi, a signed agreement must be in place and your technical setup must be registered.
@@ -25,7 +24,7 @@ Send a request to [post@norskgjeld.no](mailto:post@norskgjeld.no) with:
 - Enterprise certificate (SEID 2.0) — issued by Buypass or Commfides
 
 !!! note "What happens next"
-    NoGi will configure your FI in both test and production. You will receive test access details and can begin [mandatory testing](deliver-testing.md).
+    NoGi will configure your FI in both test and production. You will receive test access details and can begin [mandatory testing](Testing_&_go-live.md).
 
 ---
 

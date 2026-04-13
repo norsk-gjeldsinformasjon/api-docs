@@ -42,6 +42,8 @@ and can be kept there at the predefined location as per SFTP url given to NoGI
 
 * File name should be with organization name and file extension should be ".txt", for example "
   985815534.txt"
+* The SSN-list file(s) must be present on the SFTP server **no later than the last day
+  of each quarter** (the day before the quarterly processing run).
 * If an organization needs data package on behalf of separate organizations, then different files
   with all the organization number should be kept there.
   </br>Make sure NoGI has received all the organization numbers which banks wants the data package
@@ -68,6 +70,10 @@ The steps below will be executed the first date in each yearly quarter
       created.
 * When the data package file has been generated it will be delivered to the specified location over
   SFTP as a .gzip file.
+
+Ensure your SSN-list file is uploaded to the SFTP server by the last day of the
+preceding quarter. If the file is not found when the service runs, you will receive a Failure.
+
 
 ## High-level workflow
 
@@ -191,3 +197,9 @@ empty array will be returned for that SSN
 Norsk Gjeldsinformasjon should be able to download the SSN list multiple times.
 When the job is complete and the data package are present on your SFTP server, it is safe to remove
 the SSN list.
+
+### When must the SSN list be ready?
+The SSN-list must be present on the SFTP server **by the last day of each quarter**
+(the day before the quarterly run). For example, for the Q2 run on April 1,
+the file must be available by March 31. If the file is missing, a failure report
+will be generated indicating "SSN list not found."

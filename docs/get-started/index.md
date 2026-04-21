@@ -8,7 +8,7 @@ Teach users how to achieve something step-by-step, aimed at beginners. Focus on 
 
 Norsk Gjeldsinformasjon provides API for retrieving information about debt for individuals. Financial institutions that act as credit bureaus or lenders can query information when assessing lenders for loans or credit. Other organizations can ask individuals for consent to access information about their debt.
 
-If you need help choosing what type of integration is right for you, see [How-to: Choose integration](../howto/choose_integration.md).
+If you need help choosing what type of integration is right for you, see [How-to: 1. Select an integration](../howto/1.%20Select%20an%20integration.md)
 
 Reach out to [Norsk Gjeldsinformasjon](https://www.norskgjeld.no/kontakt-oss/) for more information about using these services.
 
@@ -25,7 +25,7 @@ Before using integrated consent, you will need sign up by contacting [Norsk Gjel
 
 ### Authorize
 
-You can test authorization by following [How-to: Authorize](../howto/consent_authorize.md). This is typically handled by a library in production code.
+You can test authorization by following [How-to: Authorize](../howto/2.%20How%20do%20I%20authorize.md). This is typically handled by a library in production code.
 
 You should now be able to use your credentials to fetch access tokens.
 
@@ -72,7 +72,7 @@ You will receive a clientId and credentials that can be used when talking to our
 
 ### Authorize
 
-You can test authorization by following [How-to: Authorize](../howto/consent_authorize.md). This is typically handled by a library in production code.
+You can test authorization by following [How-to: Authorize](../howto/2.%20How%20do%20I%20authorize.md). This is typically handled by a library in production code.
 
 You should now be able to use your credentials to fetch access tokens.
 

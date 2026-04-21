@@ -18,3 +18,18 @@
 [data-md-color-scheme="slate"] .md-nav__link--active {
   color: var(--md-primary-fg-color--dark);
 }
+
+.headerlink {
+  opacity: 0.5 !important;
+  font-size: 0;
+}
+
+.headerlink:hover {
+  opacity: 1 !important;
+}
+
+.headerlink::before {
+  font-family: "bootstrap-icons";
+  content: "\f470";
+  font-size: 1rem;
+}

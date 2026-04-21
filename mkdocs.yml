@@ -29,6 +29,9 @@ theme:
 # Extra styling to enhance contrast in dark/light mode
 extra_css:
   - "stylesheets/extra.css"
+# Extra javascript for add on functionality
+extra_javascript:
+  - "script/header_links.js"
 plugins:
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
@@ -42,6 +45,9 @@ markdown_extensions:
   - md_in_html
   - pymdownx.tabbed:
       alternate_style: true
+  - toc:
+      permalink: "🔗"
+      permalink_title: Copy link to this section
 nav:
   - Home: index.md
   - Get started: get-started/index.md

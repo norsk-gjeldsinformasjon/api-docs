@@ -18,3 +18,7 @@
 [data-md-color-scheme="slate"] .md-nav__link--active {
   color: var(--md-primary-fg-color--dark);
 }
+
+.headerlink {
+  opacity: 1 !important;
+}

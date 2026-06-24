@@ -21,4 +21,4 @@ Each quarter, you can retrieve debt information for all your loan customers to e
 
 ## Delivering Debt Data
 
-All financial institutions offering unsecured consumer debt must make their debt information available to NoGi daily. See the [Deliver debt data](howto/deliver/Onboarding_&_Scenarios.md) section for complete documentation.
+All financial institutions offering unsecured consumer debt must make their debt information available to NoGi daily. See the [Deliver debt data](howto/deliver-debt-data/Onboarding_&_Scenarios.md) section for complete documentation.

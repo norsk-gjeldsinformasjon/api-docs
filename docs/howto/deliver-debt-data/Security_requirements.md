@@ -1,4 +1,3 @@
-[deliver-security.md](https://github.com/user-attachments/files/26279613/deliver-security.md)
 # Security requirements
 
 All APIs exchanging debt information must use mutual TLS (mTLS) with valid enterprise certificates. These are **mandatory prerequisites** before any test or production access is granted.
@@ -10,8 +9,8 @@ All APIs exchanging debt information must use mutual TLS (mTLS) with valid enter
 
 - TLS 1.2 or newer on all your endpoints
 - Mutual TLS (mTLS) configured — both client and server authenticate
-- EV or OV TLS certificate on your server endpoint
-- Enterprise client certificate (SEID 2.0) from Buypass or Commfides
+- EV or OV TLS certificate on your server endpoint (Mozilla trusted CA)
+- Enterprise client certificate (SEID 2.0) from Buypass or Commfides — for business/client authentication, not server TLS
 - **Separate** certificates for test and production
 - Buypass root CA bundle installed in your Trusted Root store
 - Only NSM-recommended cipher suites in use
@@ -24,15 +23,14 @@ All APIs exchanging debt information must use mutual TLS (mTLS) with valid enter
 | Key size | RSA ≥ 2048 bits (3072 preferred) or EC ≥ 256 bits |
 | ExtendedKeyUsage | TLS Web Server Authentication |
 | SAN | `DNS:<your API FQDN>` |
-| Norwegian issuers | Comfides or Buypass (EV or OV) — no need to send to NoGi |
-| Non-Norwegian FIs | EV from Mozilla trusted CA list, or PSD2/eIDAS QWAC — must send to NoGi |
+| CA | Standard Mozilla trusted CA list — no need to send to NoGi |
 
 ## Your enterprise client certificate
 
 | Requirement | Value |
 |---|---|
 | KeyUsage | `digitalSignature` (critical) |
-| Subject.SerialNumber | Your organisation number (ISO 6523) |
+| Subject.organizationIdentifier | Your organisation number (ISO 6523, NTR prefix). Example: `NTRNO-920013015` |
 | Ownership | Must be owned by the legal entity sending data |
 | Environments | Separate certificates for test and production — mandatory |
 

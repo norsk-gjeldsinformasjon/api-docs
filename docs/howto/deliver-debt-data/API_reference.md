@@ -11,7 +11,7 @@ Your system **exposes** `getalldata` and `getDataForSSN` — NoGi calls these. Y
 GET /debt-information/v1/loans/{financialInstitutionID}
 ```
 
-Called by NoGi daily at **05:00 UTC**. Returns the complete dataset for all customers. Paging required if > 100 MB.
+Called by NoGi daily, queued some time after **05:00 UTC**. Returns the complete dataset for all customers. Paging required if > 100 MB.
 
 ### Query parameters
 
@@ -76,4 +76,4 @@ Called by NoGi on demand. Must respond in < 500 ms for 99% of requests at ≥ 50
     - No duplicate customers (same `customerID` + `financialInstitutionID`)
     - All amounts must be ≥ 0 (no negative values)
     - All SSNs and D-numbers must be valid (11 digits, valid checksum)
-    - `coBorrower` must be explicitly set: `0`, `1`, or `2`
+    - `coBorrower` must be explicitly set: `0` (single debtor / not a co-borrower), `1` (co-borrower), or `2` (primary debtor with co-borrower)

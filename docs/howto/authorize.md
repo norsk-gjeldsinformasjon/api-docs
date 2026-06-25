@@ -7,7 +7,7 @@ tags:
 
 ## Prerequisites
 
-You have been given access to the consent APIs and have been given a client id. See [Get started](index.md) for how to begin.
+You have been given access to the consent APIs and have been given a client id. See [Get started](../get-started/index.md) for how to begin.
 
 ## Library support
 

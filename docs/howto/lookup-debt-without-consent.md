@@ -37,7 +37,7 @@ This service is for financial institutions with a legal basis under **Gjeldsinfo
 
 | Parameter | Required | Description |
 |---|---|---|
-| `ssn` | **YES** | Valid Norwegian SSN or D-number (11 digits) |
+| `ssn` | **YES** | Valid Norwegian NIN or D-number (11 digits) |
 | `referenceID` | **YES** | Your traceability reference, e.g. a loan application ID |
 | `messageToCustomer` | No | Message to notify the applicant. No identifying info. Max 100 chars. |
 | `coBorrowers` | No | Array of co-borrowers. Each item has one field: `ssn`. |

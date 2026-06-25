@@ -43,7 +43,7 @@ user.
 
 This can be created
 at [https://ra-preprod.bankidnorge.no/#/generate](https://ra-preprod.bankidnorge.no/#/generate).
-Generate an SSN and set the BankID type to netcentric. When you use this BankID with ID-porten for
+Generate an NIN and set the BankID type to netcentric. When you use this BankID with ID-porten for
 the first time, you will be asked if you want to add additional info which you can skip.
 
 In preprod (BankID TestBank) the one-time code is always `otp`, and the password is `qwer1234`

@@ -10,8 +10,8 @@ All three API operations must be successfully tested in pre-production before pr
 !!! note "To get test access"
     Contact [post@norskgjeld.no](mailto:post@norskgjeld.no) with: organisation details, test endpoint URL, test IP addresses, and test enterprise certificate.
 
-!!! warning "Synthetic SSNs only"
-    Real or production SSNs must **never** be used in non-production environments.
+!!! warning "Synthetic NINs only"
+    Real or production NINs must **never** be used in non-production environments.
 
 ## Mandatory tests — getalldata
 

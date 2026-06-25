@@ -73,7 +73,12 @@ nav:
     - Reference: reference/index.md
     - Consent reference: reference/consent.md
     - OpenAPI: reference/openapi.md
-    - Deliver debt data API: reference/deliver-debt-data.md
+    - Deliver debt data API:
+      - Overview: reference/deliver-debt-data/index.md
+      - getalldata: reference/deliver-debt-data/getalldata.md
+      - getDataForSSN: reference/deliver-debt-data/getDataForSSN.md
+      - pushUpdates: reference/deliver-debt-data/pushUpdates.md
+      - Data validation: reference/deliver-debt-data/validation.md
     - Security requirements: reference/security-requirements.md
   - Explanations:
     - Explanations: explanation/index.md

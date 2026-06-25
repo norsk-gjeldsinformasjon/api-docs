@@ -11,6 +11,9 @@ GET /debt-information/v1/loans/{financialInstitutionID}
 
 Called by NoGi daily, queued some time after **05:00 UTC**. Returns the complete dataset for all customers.
 
+!!! warning "Data availability"
+    All debt data must be updated and available from **05:00 UTC daily**. NoGi's call is queued after this time.
+
 ## Query parameters
 
 | Parameter | Required | Description |

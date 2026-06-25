@@ -38,7 +38,20 @@ All APIs exchanging debt information must use mutual TLS (mTLS) with valid enter
 | KeyUsage | `digitalSignature` (critical) |
 | Subject.organizationIdentifier | Your organisation number (ISO 6523, NTR prefix). Example: `NTRNO-920013015` |
 | Ownership | Must be owned by the legal entity sending data |
-| Environments | Separate certificates for test and production — mandatory |
+## Your enterprise client certificate
+
+| Requirement | Value |
+|---|---|
+| KeyUsage | `digitalSignature` (critical) |
+| Subject.organizationIdentifier | Your organisation number (ISO 6523, NTR prefix). Example: `NTRNO-920013015` |
+| Ownership | Must be owned by the legal entity sending data |
+| Environments | Separate certificates for test and production |
+
+| Environment | Certificate type | Accepted issuers |
+|---|---|---|
+| Test | Enterprise client certificate (SEID 2.0) | Buypass or Commfides |
+| Production | Enterprise client certificate (SEID 2.0) | Buypass or Commfides |
+| Non-Norwegian FIs | PSD2 / eIDAS QWAC | Approved QTSP |
 
 ## Certificate renewal timelines
 

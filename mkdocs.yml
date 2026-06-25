@@ -65,7 +65,6 @@ nav:
       - Get notified about changes to consents: howto/consent-notifications.md
     - Look up debt without consent: howto/lookup-debt-without-consent.md
     - Receive quarterly debt reports: howto/quarterly-debt-reports.md
-    - Environments & endpoints: howto/environments.md
     - Deliver debt data:
       - Onboarding & scenarios: howto/deliver-debt-data/Onboarding_&_Scenarios.md
       - Testing & go-live: howto/deliver-debt-data/Testing_&_go-live.md

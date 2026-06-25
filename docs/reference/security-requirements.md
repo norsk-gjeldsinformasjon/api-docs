@@ -36,16 +36,11 @@ All APIs exchanging debt information must use mutual TLS (mTLS) with valid enter
 | Requirement | Value |
 |---|---|
 | KeyUsage | `digitalSignature` (critical) |
-| Subject.organizationIdentifier | Your organisation number (ISO 6523, NTR prefix). Example: `NTRNO-920013015` |
-| Ownership | Must be owned by the legal entity sending data |
-## Your enterprise client certificate
-
-| Requirement | Value |
-|---|---|
-| KeyUsage | `digitalSignature` (critical) |
-| Subject.organizationIdentifier | Your organisation number (ISO 6523, NTR prefix). Example: `NTRNO-920013015` |
+| Subject.organizationIdentifier | Your organisation number with `NTR` prefix, per **ETSI EN 319 412-1**. Example: `NTRNO-920013015`. Only `NTR` (National Trade Registry) identifier type is supported. |
 | Ownership | Must be owned by the legal entity sending data |
 | Environments | Separate certificates for test and production |
+
+For details on the `organizationIdentifier` format, see [ETSI EN 319 412-1 V1.6](https://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.06.01_60/en_31941201v010601p.pdf).
 
 | Environment | Certificate type | Accepted issuers |
 |---|---|---|

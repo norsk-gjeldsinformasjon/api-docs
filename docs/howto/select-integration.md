@@ -4,7 +4,7 @@ There are a few different options for integrating with Norsk Gjeldsinformasjon. 
 
 ## We are a Financial Institution (credit bureaus or lender)
 
-Which companies and institutions that can access information about unsecured debt is regulated in gjeldsinformasjonsloven. If your organization is allowed to access this information you can integrate with the Search API.
+Which companies and institutions that can access information about unsecured debt is regulated in [Gjeldsinformasjonsloven](https://lovdata.no/dokument/NL/lov/2017-06-16-47). If your organization is allowed to access this information you can integrate with the Search API.
 
 !!! note "Note"
     Documentation for this service is being migrated. See the new - [Look up debt without consent](lookup-debt-without-consent.md) section for updated documentation.

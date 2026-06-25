@@ -30,7 +30,7 @@ See our [OpenAPI](../reference/openapi.md) documentation for more information.
 
 ### <a name="consent-events"></a> I need to be notified about changes as they happen
 
-You can also be notified about changes to consents as they happen by subscribing to Consent Feed API. See [How do I get notified about changes to consents](../howto/consent-notifications.md) and the [OpenAPI](../reference/openapi.md) reference for more information.
+You can be notified about changes to consents as they happen by subscribing to Consent Feed API. See [How do I get notified about changes to consents](../howto/consent-notifications.md) and the [OpenAPI](../reference/openapi.md) reference for more information.
 
 
 ## Inactive or expired consents

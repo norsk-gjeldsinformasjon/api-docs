@@ -4,7 +4,7 @@ By calling the Consent Feed API, you can retrieve relevant changes to your conse
 
 ## Prerequisites
 
-You know [how to authorize](2.%20How%20do%20I%20authorize.md) and retrieve access tokens. You have collected consent from an individual.
+You know [how to authorize](authorize.md) and retrieve access tokens. You have collected consent from an individual.
 
 ## 1. Retrieve access token
 

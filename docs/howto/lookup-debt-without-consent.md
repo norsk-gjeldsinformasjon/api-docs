@@ -4,14 +4,14 @@ This service is for financial institutions with a legal basis under **Gjeldsinfo
 
 !!! note "Legal basis required"
     Your legal/compliance function must confirm a valid legal basis before using this service.
-    Without it, use [consent-based lookups](3.%20Lookup%20debt%20with%20consent.md).
+    Without it, use [consent-based lookups](lookup-debt-with-consent.md).
 
 ---
 
 ## Prerequisites
 
 - Signed agreement with NoGi — contact [post@norskgjeld.no](mailto:post@norskgjeld.no)
-- Valid enterprise certificate (SEID 2.0) and mTLS configured — see [Security requirements](deliver-debt-data/Security_requirements.md)
+- Valid enterprise certificate (SEID 2.0) and mTLS configured — see [Security requirements](../reference/security-requirements.md)
 - Network access to NoGi test and production endpoints
 
 ---

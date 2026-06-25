@@ -56,23 +56,23 @@ nav:
   - Get started: get-started/index.md
   - How-to:
     - How-to: howto/index.md
-    - Select an integration: "howto/1. Select an integration.md"
-    - Authorize: "howto/2. How do I authorize.md"
+    - Select an integration: howto/select-integration.md
+    - Authorize: howto/authorize.md
     - Look up debt with consent:
-      - Look up debt with consent: "howto/3. Lookup debt with consent.md"
-      - Get notified about changes to consents: "howto/3.1 Get notified about consents.md"
-    - Look up debt without consent: "howto/4. Lookup debt without consent.md"
-    - Receive quarterly debt reports: "howto/5. Recieve quarterly debt reports.md"
-    - Environments & endpoints: "howto/6. Environments & endpoints.md"
+      - Look up debt with consent: howto/lookup-debt-with-consent.md
+      - Get notified about changes to consents: howto/consent-notifications.md
+    - Look up debt without consent: howto/lookup-debt-without-consent.md
+    - Receive quarterly debt reports: howto/quarterly-debt-reports.md
+    - Environments & endpoints: howto/environments.md
     - Deliver debt data:
-      - Onboarding & scenarios: "howto/deliver-debt-data/Onboarding_&_Scenarios.md"
-      - Security requirements: howto/deliver-debt-data/Security_requirements.md
-      - API reference: howto/deliver-debt-data/API_reference.md
-      - Testing & go-live: "howto/deliver-debt-data/Testing_&_go-live.md"
+      - Onboarding & scenarios: howto/deliver-debt-data/Onboarding_&_Scenarios.md
+      - Testing & go-live: howto/deliver-debt-data/Testing_&_go-live.md
   - Reference:
     - Reference: reference/index.md
     - Consent reference: reference/consent.md
     - OpenAPI: reference/openapi.md
+    - Deliver debt data API: reference/deliver-debt-data.md
+    - Security requirements: reference/security-requirements.md
   - Explanations:
     - Explanations: explanation/index.md
     - Consent: explanation/consent.md

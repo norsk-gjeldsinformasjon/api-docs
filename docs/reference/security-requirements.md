@@ -1,3 +1,9 @@
+---
+tags:
+  - debt-delivery
+  - fi-lookup
+---
+
 # Security requirements
 
 All APIs exchanging debt information must use mutual TLS (mTLS) with valid enterprise certificates. These are **mandatory prerequisites** before any test or production access is granted.

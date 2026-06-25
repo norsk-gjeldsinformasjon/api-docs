@@ -1,3 +1,8 @@
+---
+tags:
+  - consent
+---
+
 # Fetching debt information with consents
 
 This service lets you:

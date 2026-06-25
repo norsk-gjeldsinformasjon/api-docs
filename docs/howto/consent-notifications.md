@@ -1,3 +1,8 @@
+---
+tags:
+  - consent
+---
+
 # Get notified about changes to consents
 
 By calling the Consent Feed API, you can retrieve relevant changes to your consents, for example recently revoked or expired consents.

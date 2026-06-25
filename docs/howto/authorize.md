@@ -1,3 +1,8 @@
+---
+tags:
+  - consent
+---
+
 # How do I authorize
 
 ## Prerequisites

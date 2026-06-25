@@ -1,3 +1,8 @@
+---
+tags:
+  - debt-delivery
+---
+
 # Deliver debt data — Onboarding
 
 Before you can deliver debt data to NoGi, a signed agreement must be in place and your technical setup must be registered.

@@ -1,3 +1,8 @@
+---
+tags:
+  - consent
+---
+
 # Get started
 
 <!--

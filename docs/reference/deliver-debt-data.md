@@ -1,3 +1,8 @@
+---
+tags:
+  - debt-delivery
+---
+
 # API reference — Delivering debt data
 
 Your system **exposes** `getalldata` and `getDataForSSN` — NoGi calls these. Your system **calls** NoGi's `pushUpdates` endpoint when debt changes.

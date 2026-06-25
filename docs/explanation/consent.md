@@ -1,3 +1,8 @@
+---
+tags:
+  - consent
+---
+
 # Consents explained
 
 Individuals can consent to share information about their debt with other organizations. When a user has consented, the organization will be able to look up information about the individuals debt. Consents have a defined purpose which limits what the information should be used for.

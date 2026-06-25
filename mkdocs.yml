@@ -38,6 +38,8 @@ plugins:
       puml_keyword: plantuml
   - render_swagger
   - search
+  - tags:
+      tags_file: tags/index.md
 
 markdown_extensions:
   - admonition
@@ -78,3 +80,4 @@ nav:
     - Consent: explanation/consent.md
     - Consuming event feeds: explanation/consume-events-feed.md
   - Contribute: contributing.md
+  - Tags: tags/index.md

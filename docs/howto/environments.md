@@ -1,3 +1,10 @@
+---
+tags:
+  - consent
+  - fi-lookup
+  - debt-delivery
+---
+
 # Environments & endpoints
 
 All integrations must be verified in the **pre-production (test) environment** before production access is granted.

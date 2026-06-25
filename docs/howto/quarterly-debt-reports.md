@@ -1,3 +1,8 @@
+---
+tags:
+  - quarterly-reports
+---
+
 # Get sent quarterly debt reports regarding own customers
 
 Norsk Gjeldsinformasjon offers a service for sending financial institutions packaged data of their customer base once every fiscal quarter over SFTP.

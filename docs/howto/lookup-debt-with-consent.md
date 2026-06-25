@@ -1,3 +1,8 @@
+---
+tags:
+  - consent
+---
+
 # Look up debt with consent
 
 ## Prerequisites

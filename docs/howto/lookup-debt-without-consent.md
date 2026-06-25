@@ -1,3 +1,8 @@
+---
+tags:
+  - fi-lookup
+---
+
 # Look up debt without consent
 
 This service is for financial institutions with a legal basis under **Gjeldsinformasjonsloven** to request debt information without explicit consumer consent.

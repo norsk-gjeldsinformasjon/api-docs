@@ -48,4 +48,7 @@ All APIs exchanging debt information must use mutual TLS (mTLS) with valid enter
 | Production | 20 business days before expiry | Within 10 business days |
 
 !!! note "Transitions"
-    NoGi accepts both old and new certificates during transitions — no downtime required if timelines are followed.
+
+    NoGi accepts both old and new enterprice certificates during transitions — no downtime required if timelines are followed.
+
+    For rotating or renewing TLS certificates, there's typically no need to coordinate with Norsk Gjeldsinformasjon.

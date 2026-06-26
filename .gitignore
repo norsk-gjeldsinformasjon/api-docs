@@ -4,3 +4,10 @@
 
 #Python virtual environment
 /env/
+
+#Editor artifacts
+*~
+\#*\#
+
+#Build output
+/site/

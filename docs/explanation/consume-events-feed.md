@@ -1,3 +1,8 @@
+---
+tags:
+  - consent
+---
+
 # Consuming event feeds
 
 ## Polling the feed

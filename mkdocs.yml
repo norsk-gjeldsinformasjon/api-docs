@@ -66,8 +66,8 @@ nav:
     - Look up debt without consent: howto/lookup-debt-without-consent.md
     - Receive quarterly debt reports: howto/quarterly-debt-reports.md
     - Deliver debt data:
-      - Onboarding & scenarios: howto/deliver-debt-data/Onboarding_&_Scenarios.md
-      - Testing & go-live: howto/deliver-debt-data/Testing_&_go-live.md
+      - Onboarding & scenarios: howto/deliver-debt-data/Onboarding_and_Scenarios.md
+      - Testing & go-live: howto/deliver-debt-data/Testing_and_go-live.md
   - Reference:
     - Reference: reference/index.md
     - Consent reference: reference/consent.md

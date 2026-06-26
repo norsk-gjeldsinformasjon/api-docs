@@ -29,7 +29,7 @@ Send a request to [post@norskgjeld.no](mailto:post@norskgjeld.no) with:
 - Enterprise certificate (SEID 2.0) — issued by Buypass or Commfides
 
 !!! note "What happens next"
-    NoGi will configure your FI in both test and production. You will receive test access details and can begin [mandatory testing](Testing_&_go-live.md). See [Security requirements](../../reference/security-requirements.md) for certificate and authentication requirements.
+    NoGi will configure your FI in both test and production. You will receive test access details and can begin [mandatory testing](Testing_and_go-live.md). See [Security requirements](../../reference/security-requirements.md) for certificate and authentication requirements.
 
 ---
 

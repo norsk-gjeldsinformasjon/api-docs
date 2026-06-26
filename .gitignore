@@ -11,3 +11,6 @@
 
 #Build output
 /site/
+
+#mkdocs_puml cache
+.cache/

@@ -35,8 +35,8 @@
     }
   ],
   "externalDocs": {
-    "description": "Norsk Gjeldsinformasjon API documentation",
-    "url": "https://norskgjeld.github.io/api-docs/"
+    "description": "Norsk Gjeldsinformasjon consent API",
+    "url": "https://norsk-gjeldsinformasjon.github.io/api-docs/"
   },
   "paths": {
     "/v1/consent/agreement": {

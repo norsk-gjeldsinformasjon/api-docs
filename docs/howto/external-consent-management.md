@@ -39,8 +39,7 @@ deactivate SamtykkeSSO
 
 ## 2. Register the consent
 
-Call the [PUT /v1/consent/agreement](../reference/openapi.md#operations-samtykke-avtale-controller-createConsent)
-endpoint with the access token. The `scope_of_consent` parameter uses the same [scopes](../reference/index.md#consent-purpose)
+Call the [PUT /v1/consent/agreement](../reference/openapi.md) endpoint (under the **Agreement API** tag) with the access token. The `scope_of_consent` parameter uses the same [scopes](../reference/index.md#consent-purpose)
 as the regular consent flow.
 
 The response contains the NoGi-generated `consent.id`.
@@ -48,7 +47,7 @@ The response contains the NoGi-generated `consent.id`.
 ## 3. Fetch debt using the registered consent
 
 Once registered, you can fetch debt information using the [Client Credentials flow](../reference/index.md#client-credentials-flow)
-to get an access token, and then call the [debt lookup API](../reference/openapi.md#operations-tag-Debt_Api).
+to get an access token, and then call the [debt lookup API](../reference/openapi.md) (under the **Debt Api** tag).
 
 ## Example implementation
 

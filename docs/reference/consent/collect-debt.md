@@ -7,4 +7,4 @@ tags:
 
 After you have received an access token from the Authorization server you can use it to collect the
 debt information from the API which is documented in the
-[OpenAPI spec](../openapi.md#operations-tag-Debt_Api).
+[OpenAPI spec](../openapi.md) (under the **Debt Api** tag).

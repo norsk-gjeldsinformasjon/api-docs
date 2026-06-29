@@ -22,7 +22,7 @@ You will need to use an access token with scope="client.access.consent.events" a
     The sequence numbers are not guaranteed to be contiguous. You might receive a response containing {seq. nr: 7, seq. nr: 8, seq. nr: 13}.
     The sequence numbers 9-12 are not missing.
 
-The API is defined in the [OpenAPI spec](../openapi.md#operations-tag-Consents_Feed_API).
+The API is defined in the [OpenAPI spec](../openapi.md) (under the **Consents Feed API** tag).
 
 ## Example implementation
 

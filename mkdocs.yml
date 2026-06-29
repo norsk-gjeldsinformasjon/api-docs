@@ -9,6 +9,8 @@ theme:
   logo: assets/logo.png
   icon:
     repo: fontawesome/brands/github
+  features:
+    - navigation.indexes
   palette:
     - media: "(prefers-color-scheme)"
       toggle:

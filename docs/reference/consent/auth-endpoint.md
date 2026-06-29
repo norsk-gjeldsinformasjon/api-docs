@@ -9,7 +9,7 @@ tags:
     - Preprod: `https://access-preprod.norskgjeld.no`
     - Prod: `https://access.norskgjeld.no`
 
-The auth endpoint is the starting point for the OAuth2.0 Authorization code flow. This request
+The auth endpoint is the starting point for the OAuth 2.0 Authorization code flow. This request
 authenticates the user and returns a code on the callback which can be exchanged for an access token
 towards the /token endpoint.
 

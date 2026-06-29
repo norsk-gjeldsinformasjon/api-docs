@@ -50,7 +50,7 @@ See the [Consent](consent/index.md) reference for endpoint-specific details on t
 
 ## Regular consent flows
 
-We are offering two OAuth2.0 flows, Authorization Code and Client Credentials.
+We are offering two OAuth 2.0 flows, Authorization Code and Client Credentials.
 
 ### Authorization Code Flow
 

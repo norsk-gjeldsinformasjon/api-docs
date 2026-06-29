@@ -9,7 +9,7 @@ Updates to consents are available as a feed for customers of the consent service
 
 This service can be used to "subscribe" to changes instead of checking the status of each individual consent you have registered.
 
-This log will show the last 7 days of events for alle consents given to you.
+This log will show the last 7 days of events for all consents given to you.
 
 !!! tip "Base URLs"
     - Preprod: `https://api-preprod.norskgjeld.no`

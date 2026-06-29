@@ -153,7 +153,7 @@ For more details on each step, see the [Authorization how-to](../howto/authorize
 
 With regular consent, individuals are redirected from your platform to Norsk Gjeldsinformasjon.
 They identify with ID-porten and confirm the consent before being redirected back to you.
-The service uses a redirect-based flow adhering to OAuth2.0 and OpenID Connect standards.
+The service uses a redirect-based flow adhering to OAuth 2.0 and OpenID Connect standards.
 
 The debt information is delivered in the same format as our debt query API, but since it is
 provided with the end user's consent, we also include the name of the creditors.

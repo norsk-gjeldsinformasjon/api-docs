@@ -5,6 +5,10 @@ tags:
 
 # OpenID configuration
 
+!!! tip "Base URLs"
+    - Preprod: `https://access-preprod.norskgjeld.no`
+    - Prod: `https://access.norskgjeld.no`
+
 The OpenID-configuration returns metadata which can be used to configure your client library.
 
 _**Example request**_

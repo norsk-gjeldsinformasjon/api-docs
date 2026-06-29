@@ -83,7 +83,6 @@ nav:
     - Consent API:
       - Overview: reference/consent/index.md
       - Scopes: reference/consent/scopes.md
-      - Base URLs: reference/consent/base-urls.md
       - OpenID configuration: reference/consent/openid-configuration.md
       - Auth endpoint: reference/consent/auth-endpoint.md
       - Token endpoint: reference/consent/token-endpoint.md

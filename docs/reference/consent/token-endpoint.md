@@ -5,6 +5,10 @@ tags:
 
 # Token endpoint — POST /oauth2/token
 
+!!! tip "Base URLs"
+    - Preprod: `https://access-preprod.norskgjeld.no`
+    - Prod: `https://access.norskgjeld.no`
+
 The token endpoint is used to obtain an access token which is used when collecting debt information
 from the debt-API. This can either be completed with the code received on the callback after the
 user has finished delivering their consent (Authorization Code Flow), or the client can identify

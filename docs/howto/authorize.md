@@ -19,8 +19,9 @@ Before you call Norsk Gjeldsinformasjon API, you will need to fetch an access to
 
 Access tokens are requested by POSTing to the `/token` endpoint:
 
-- `https://access-preprod.norskgjeld.no/oauth2/token` (test)
-- `https://access.norskgjeld.no/oauth2/token` (production)
+!!! tip "Base URLs"
+    - Preprod: `https://access-preprod.norskgjeld.no`
+    - Prod: `https://access.norskgjeld.no`
 
 ### Client credentials
 

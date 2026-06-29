@@ -11,6 +11,10 @@ This service can be used to "subscribe" to changes instead of checking the statu
 
 This log will show the last 7 days of events for alle consents given to you.
 
+!!! tip "Base URLs"
+    - Preprod: `https://api-preprod.norskgjeld.no`
+    - Prod: `https://api.norskgjeld.no`
+
 You will need to use an access token with scope="client.access.consent.events" and audience set to "https://api-preprod.norskgjeld.no/feed/v1/consent" (for preprod) or "https://api.norskgjeld.no/feed/v1/consent" (for production) when calling this API.
 
 !!! note "Sequence numbers and timing"

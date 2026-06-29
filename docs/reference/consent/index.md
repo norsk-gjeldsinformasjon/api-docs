@@ -17,7 +17,6 @@ OAuth2.0 and OpenID Connect standards.
 | Topic | Description |
 |---|---|
 | [Scopes](scopes.md) | Scope definitions, intended use, extended duration, and the optional openid scope |
-| [Base URLs](base-urls.md) | Environment URLs for preprod and production |
 | [OpenID configuration](openid-configuration.md) | `/.well-known/openid-configuration` metadata |
 | [Auth endpoint](auth-endpoint.md) | `GET /oauth2/auth` — parameters and examples |
 | [Token endpoint](token-endpoint.md) | `POST /oauth2/token` — Authorization Code and Client Credentials flows |

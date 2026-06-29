@@ -23,11 +23,11 @@ This service is for financial institutions with a legal basis under **Gjeldsinfo
 
 ## Endpoint
 
-| Environment | URL |
-|---|---|
-| Test | `https://ws.preprod.norskgjeld.no/api/rest/v2/debt/search` |
-| OpenAPI (test) | `https://ws.preprod.norskgjeld.no/api/rest/swagger.json` |
-| Production | Provided during onboarding |
+!!! tip "Base URLs"
+    - Test: `https://ws.preprod.norskgjeld.no`
+    - Production: `https://ws.norskgjeld.no`
+
+The search endpoint is at `/api/rest/v2/debt/search` and the OpenAPI spec is at `/api/rest/swagger.json`.
 
 ---
 

@@ -7,6 +7,10 @@ tags:
 
 By calling the Consent Feed API, you can retrieve relevant changes to your consents, for example recently revoked or expired consents.
 
+!!! tip "Base URLs"
+    - Preprod: `https://api-preprod.norskgjeld.no`
+    - Prod: `https://api.norskgjeld.no`
+
 ## Prerequisites
 
 You know [how to authorize](authorize.md) and retrieve access tokens. You have collected consent from an individual.

@@ -16,6 +16,8 @@ Help users solve specific problems or accomplish specific tasks. Provide practic
 
 [How do I look up debt without a consent](lookup-debt-without-consent.md)
 
+[How do I manage consents externally](external-consent-management.md)
+
 [How do I receive quarterly debt reports](quarterly-debt-reports.md)
 
 [How do I contribute to this documentation](../contributing.md)

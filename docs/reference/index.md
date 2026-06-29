@@ -17,6 +17,8 @@ We currently offer these scopes:
 | Presentation | The debt will be presented to the individual                                           |
 | Processing   | The debt will be used for assessing an application from the individual for loan/credit |
 
+See [Scopes](consent/scopes.md) for the full reference including scope identifiers and the optional openid scope.
+
 ## Consent duration
 
 Consents can be requested with a duration. A duration specifies *how long* the organization can look up information about debt. If no duration in specified, then a single-use scope will be created. This scope can be used within a few minutes and only used once.

@@ -41,7 +41,7 @@ Access tokens are requested by POSTing to the `/token` endpoint:
 
 ### Authorization code
 
-This is only available with [Regular consent](../reference/consent.md). Redirect the individual to `access.norskgjeld.no`:
+This is only available with [Regular consent](../reference/consent/index.md). Redirect the individual to `access.norskgjeld.no`:
 
 ```
 GET: https://access-preprod.norskgjeld.no/oauth2/auth

@@ -56,11 +56,23 @@ See our [OpenAPI definition](../reference/openapi.md) for details.
 
 ## Regular consent
 
+With regular consent, individuals are redirected from your platform to Norsk Gjeldsinformasjon.
+They identify with ID-porten and confirm the consent before being redirected back to you.
+The service uses a redirect-based flow adhering to OAuth2.0 and OpenID Connect standards.
+
+The debt information is delivered in the same format as our debt query API, but since it is
+provided with the end user's consent, we also include the name of the creditors.
+
 ### Preparation
 
-Before using regular consent, you will need sign up by contacting [Norsk Gjeldsinformasjon](https://www.norskgjeld.no/kontakt-oss/). You will be provided with client credentials to the preproduction environment.
+Before using regular consent, you need to enter into an agreement with Norsk Gjeldsinformasjon
+by emailing us at [support@norskgjeld.no](mailto:support@norskgjeld.no).
 
-You should decide on what [OAuth 2.0 flow](../reference/index.md) you want to use.
+When you have signed an agreement, we will send your client id and client secret. You must provide
+us with the URLs where you want to receive the callback after the consent flow finishes. This is
+not required if you only intend to [manage consents externally](../howto/external-consent-management.md).
+
+You should also decide on what [OAuth 2.0 flow](../reference/index.md) you want to use.
 
 You should provide us with:
 
@@ -74,6 +86,30 @@ You should provide us with:
 
 You will receive a clientId and credentials that can be used when talking to our API.
 
+!!! note "TLS not required"
+    This service does not require 2-way TLS, so client certificates (Virksomhetssertifikat, SEID)
+    are **not** required.
+
+!!! tip "Outbound IP addresses"
+    If you plan to run from a provider where you share multiple outbound IP addresses (e.g. cloud
+    providers), you should purchase fixed outbound IP address(es).
+
+### Testing
+
+Before you can start testing you will need a client with registered callback URIs and a BankID test
+user.
+
+This can be created
+at [https://ra-preprod.bankidnorge.no/#/generate](https://ra-preprod.bankidnorge.no/#/generate).
+Generate an NIN and set the BankID type to netcentric. When you use this BankID with ID-porten for
+the first time, you will be asked if you want to add additional info which you can skip.
+
+In preprod (BankID TestBank) the one-time code is always `otp`, and the password is `qwer1234`
+
+!!! note "Mocked debt data"
+    There will not be any loan information stored on the BankID test person you have created in
+    our test environment, so the debt API will not list any creditors. Mocked debt data is
+    available on these synthetic personal numbers: `14842249091` and `29868099311`.
 
 ### Authorize
 

@@ -35,8 +35,8 @@
     }
   ],
   "externalDocs": {
-    "description": "Norskgjeld public documentation",
-    "url": "https://norskgjeld.atlassian.net/wiki/spaces/GJEL/overview"
+    "description": "Norsk Gjeldsinformasjon API documentation",
+    "url": "https://norskgjeld.github.io/api-docs/"
   },
   "paths": {
     "/v1/consent/agreement": {

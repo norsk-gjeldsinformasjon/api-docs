@@ -22,39 +22,134 @@ Reach out to [Norsk Gjeldsinformasjon](https://www.norskgjeld.no/kontakt-oss/) f
 
 When integrating with Norsk Gjeldsinformasjon, you will initially get access to a preproduction environment.
 
-## Integrated consent
+All endpoints in this section use the pre-production base URLs. Replace with production URLs (without the `-preprod` suffix) when you go live.
 
-### Preparation
+## Quick start: Integrated consent flow (pre-production)
 
-Before using integrated consent, you will need sign up by contacting [Norsk Gjeldsinformasjon](https://www.norskgjeld.no/kontakt-oss/). You will be provided with client credentials to the preproduction environment.
+The fastest way to verify your integration is to run through the full consent lifecycle using `curl`. You need your **client ID** and **client secret** from NoGi.
 
-### Authorize
+!!! tip "Which integration?"
+    These examples illustrate the "integrated consent" flow where the client (you) receives and manages consent from the person.
 
-You can test authorization by following [How-to: Authorize](../howto/authorize.md). This is typically handled by a library in production code.
+### 1. Get an access token for the consent API
 
-You should now be able to use your credentials to fetch access tokens.
+The consent API (`/v1/consent/agreement`) requires a token with the `consent.create` scope.
 
-### Register consent
+```bash
+curl -X POST https://access-preprod.norskgjeld.no/oauth2/token \
+  -u "YOUR_CLIENT_ID:YOUR_CLIENT_SECRET" \
+  -d "grant_type=client_credentials" \
+  -d "audience=https://api-preprod.norskgjeld.no/v1/consent/agreement" \
+  -d "scope=consent.create"
+```
 
-When you have received a consent from an individual, you need to register this with Norsk Gjeldsinformasjon.
+A successful response looks like this:
 
-This is done by calling `/v1/consent/agreement`.
+```json
+{
+  "access_token": "eyJ...",
+  "expires_in": 3599,
+  "scope": "consent.create",
+  "token_type": "bearer"
+}
+```
 
-The consent can now be used to fetch debt information. The individual will see the consent when logged in to "Min Gjeld"
+Save this `access_token` — you'll use it to register the consent.
 
-See our [OpenAPI definition](../reference/openapi.md) for details.
+### 2. Register a consent
 
-### Delete consent
+Create a consent for a test individual (use one of the synthetic NINs: `14842249091` or `29868099311`):
 
-If an individual withdraws their consent, you will need to register this with Norsk Gjeldsinformasjon.
+```bash
+curl -X PUT https://api-preprod.norskgjeld.no/v1/consent/agreement \
+  -H "Authorization: Bearer ACCESS_TOKEN_FROM_STEP_1" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "nin": "14842249091",
+    "scope_of_consent": "debt.unsecured.presentation",
+    "consent_duration_days": 30,
+    "client_consent_id": "my-unique-id-001"
+  }'
+```
 
-This is done by calling `/v1/debt/{consent-id}`
+Response:
 
-The consent can no longer be used to fetch debt information. The individual will see the consent as "archived" when logged in to "Min Gjeld"
+```json
+{
+  "client_consent_id": "my-unique-id-001",
+  "consent": {
+    "id": "0dcec3d5-6844-4d2c-b972-83086064b111",
+    "expires_at": "2025-08-26T00:00:00Z",
+    "scope_of_consent": "debt.unsecured.presentation"
+  }
+}
+```
 
-See our [OpenAPI definition](../reference/openapi.md) for details.
+Save the `id` field — that's the consent ID you'll use to fetch debt.
 
-## Regular consent
+### 3. Get a token for the debt API
+
+The debt API requires a different token with the `debt.unsecured.presentation` scope.
+
+```bash
+curl -X POST https://access-preprod.norskgjeld.no/oauth2/token \
+  -u "YOUR_CLIENT_ID:YOUR_CLIENT_SECRET" \
+  -d "grant_type=client_credentials" \
+  -d "audience=https://api-preprod.norskgjeld.no/v1/debt" \
+  -d "scope=debt.unsecured.presentation"
+```
+
+Save the returned `access_token` — you'll use it to look up and revoke debt data.
+
+### 4. Look up debt using the consent
+
+```bash
+curl -X GET https://api-preprod.norskgjeld.no/v1/debt/0dcec3d5-6844-4d2c-b972-83086064b111 \
+  -H "Authorization: Bearer ACCESS_TOKEN_FROM_STEP_3"
+```
+
+Response:
+
+```json
+{
+  "ssn": "14842249091",
+  "loans": [
+    {
+      "creditorName": "EXAMPLE LENDER",
+      "loan": {
+        "type": "chargeCard",
+        "timestamp": "2022-11-03T00:00:00Z",
+        "coBorrower": 2,
+        "interestBearingBalance": 6069400,
+        "nonInterestBearingBalance": 641000
+      }
+    }
+  ],
+  "numberOfCreditorsAnswered": 1,
+  "numberOfcreditorsMissing": 0,
+  "consent": {
+    "exp": 1785312537,
+    "id": "3649911c-a58a-4b76-9794-edd8c692e84f",
+    "scope": "debt.unsecured.presentation"
+  }
+}
+```
+
+### 5. Revoke a consent
+
+When an individual withdraws their consent, revoke it by consent ID (use the debt API token):
+
+```bash
+curl -X DELETE https://api-preprod.norskgjeld.no/v1/debt/0dcec3d5-6844-4d2c-b972-83086064b111 \
+  -H "Authorization: Bearer ACCESS_TOKEN_FROM_STEP_3"
+```
+
+A `204 No Content` response means the consent was successfully revoked.
+
+For more details on each step, see the [Authorization how-to](../howto/authorize.md), [debt lookup with consent](../howto/lookup-debt-with-consent.md), and the [Consent API reference](../reference/consent/index.md).
+
+
+## Quick start: Regular consent flow (pre-production)
 
 With regular consent, individuals are redirected from your platform to Norsk Gjeldsinformasjon.
 They identify with ID-porten and confirm the consent before being redirected back to you.
@@ -116,6 +211,33 @@ In preprod (BankID TestBank) the one-time code is always `otp`, and the password
 You can test authorization by following [How-to: Authorize](../howto/authorize.md). This is typically handled by a library in production code.
 
 You should now be able to use your credentials to fetch access tokens.
+
+To get an access token for a specific individual, redirect them to the authorization endpoint:
+
+```
+https://access-preprod.norskgjeld.no/oauth2/auth
+  ?client_id=YOUR_CLIENT_ID
+  &response_type=code
+  &scope=debt.unsecured.presentation
+  &state=thisShouldBeARandomValue
+  &redirect_uri=https://your-callback-url.no/v1/callback
+```
+
+After the individual consents, they are redirected to your `redirect_uri` with an authorization code:
+
+```
+https://your-callback-url.no/v1/callback?code=AUTH_CODE&state=thisShouldBeARandomValue
+```
+
+Exchange the code for an access token:
+
+```bash
+curl -X POST https://access-preprod.norskgjeld.no/oauth2/token \
+  -u "YOUR_CLIENT_ID:YOUR_CLIENT_SECRET" \
+  -d "grant_type=authorization_code" \
+  -d "code=AUTH_CODE" \
+  -d "redirect_uri=https://your-callback-url.no/v1/callback"
+```
 
 
 ### Fetch debt

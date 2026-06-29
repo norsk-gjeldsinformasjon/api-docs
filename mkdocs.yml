@@ -27,7 +27,7 @@ theme:
 
 extra_css:
   - "stylesheets/extra.css"
-  - https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css
+  - https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css
 # Extra javascript for add on functionality
 extra_javascript:
   - "script/header_links.js"
@@ -36,10 +36,17 @@ plugins:
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
       puml_keyword: plantuml
+      # mkdocs_puml 2.x: auto dark/light themes and file caching
+      theme:
+        light: default/light
+        dark: default/dark
+      cache:
+        backend: local
+        local:
+          path: ".cache/mkdocs_puml"
   - render_swagger
   - search
-  - tags:
-      tags_file: tags/index.md
+  - tags
 
 markdown_extensions:
   - admonition

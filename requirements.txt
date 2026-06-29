@@ -6,20 +6,20 @@ colorama==0.4.6
 ghp-import==2.1.0
 idna==3.6
 Jinja2==3.1.3
-Markdown==3.5.2
+Markdown==3.10.2
 MarkupSafe==2.1.5
 mergedeep==1.3.4
-mkdocs==1.5.3
-mkdocs-material==9.5.12
+mkdocs==1.6.1
+mkdocs-material==9.7.2
 mkdocs-material-extensions==1.3.1
-mkdocs_puml==1.2.4
-mkdocs-render-swagger-plugin==0.1.1
+mkdocs_puml==2.3.0
+mkdocs-render-swagger-plugin==0.1.2
 packaging==23.2
 paginate==0.5.6
 pathspec==0.12.1
 platformdirs==4.2.0
 Pygments==2.17.2
-pymdown-extensions==10.7
+pymdown-extensions==11.0
 python-dateutil==2.9.0.post0
 PyYAML==6.0.1
 pyyaml_env_tag==0.1
@@ -28,3 +28,17 @@ requests==2.31.0
 six==1.16.0
 urllib3==2.2.1
 watchdog==4.0.0
+# Transitive dependencies (pulled in automatically by mkdocs_puml, mkdocs-material,
+# and mkdocs 1.6.x) — pinned here for reproducible builds:
+anyio==4.14.1
+backrefs==7.0
+h11==0.16.0
+httpcore==1.0.9
+httpx==0.27.2
+markdown-it-py==4.2.0
+mdurl==0.1.2
+mkdocs-get-deps==0.2.2
+msgpack==1.2.1
+rich==13.9.4
+sniffio==1.3.1
+typing_extensions==4.15.0

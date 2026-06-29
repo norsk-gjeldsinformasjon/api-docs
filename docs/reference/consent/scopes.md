@@ -39,9 +39,11 @@ It is possible to choose a shorter duration than the maximum duration if that is
 you, for example debt.unsecured.presentation.50 would prompt the user to consent to sharing their
 debt information for 50 days.
 
-The debt info can be collected any number of times using consents with an extended duration, but
-keep in mind that users can log into [www.norskgjeld.no](http://www.norskgjeld.no) and see every
-single time their consent has been used to collect debt info.
+The debt info can be collected any number of times using consents with an extended duration.
+
+!!! info "User visibility"
+    Users can log into [norskgjeld.no](http://www.norskgjeld.no) and see every time their
+    consent has been used to collect debt info.
 
 ## Optional: openid scope
 

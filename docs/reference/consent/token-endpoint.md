@@ -16,9 +16,9 @@ directly with their credentials to obtain an access token directly (Client Crede
 
 ## Authentication
 
-When calling the token endpoint you have to identify yourself. This is done by supplying your client
-id and client secret in the Authorization header using
-the [Basic authentication scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme).
+The client must authenticate using HTTP Basic authentication with its client ID and client secret in
+the Authorization header, as described in the
+[Basic authentication scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme).
 
 ## Authorization Code Flow
 

@@ -13,9 +13,9 @@ The auth endpoint is the starting point for the OAuth 2.0 Authorization code flo
 authenticates the user and returns a code on the callback which can be exchanged for an access token
 towards the /token endpoint.
 
-It is important that you show the user some kind of confirmation that the consent has been received
-on the callback. This could for example be a landing page if you intend to redirect the user to
-another service.
+!!! tip "Implementation note"
+    Show the user a confirmation that the consent was received on the callback —
+    for example, a landing page if you intend to redirect to another service.
 
 | Parameter | Description | Required |
 |---|---|---|

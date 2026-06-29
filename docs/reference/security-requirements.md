@@ -1,7 +1,7 @@
 ---
 tags:
   - debt-delivery
-  - fi-lookup
+  - debt-search
 ---
 
 # Security requirements

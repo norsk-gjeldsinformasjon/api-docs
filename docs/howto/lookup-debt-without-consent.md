@@ -1,6 +1,6 @@
 ---
 tags:
-  - fi-lookup
+  - debt-search
 ---
 
 # Look up debt without consent

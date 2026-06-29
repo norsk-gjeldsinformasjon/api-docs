@@ -9,7 +9,7 @@ tags:
 GET /debt-information/v1/loans/{financialInstitutionID}/customer
 ```
 
-Called by NoGi on demand. Must respond in **&lt; 500 ms for 99%** of requests at **≥ 50 req/sec**.
+Called by Norsk Gjeldsinformasjon on demand. Must respond in **&lt; 500 ms for 99%** of requests at **≥ 50 req/sec**.
 
 ## Request headers
 
@@ -73,4 +73,4 @@ If the customer has no registered debt, return HTTP 200 with an empty `loans` ar
 | `401` | Authentication is missing or not correct | Not authenticated to access resource      |
 | `403` | Not authorised                           | Not allowed to access resource            |
 | `429` | Too many requests                        | Signal client to back off                 |
-| `5xx` | Server error                             | NoGi will retry. Investigate and resolve. |
+| `5xx` | Server error                             | Norsk Gjeldsinformasjon will retry. Investigate and resolve. |

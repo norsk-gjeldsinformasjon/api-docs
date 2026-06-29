@@ -29,7 +29,7 @@ All APIs exchanging debt information must use mutual TLS (mTLS) with valid enter
 | Key size | RSA ≥ 2048 bits (3072 preferred) or EC ≥ 256 bits |
 | ExtendedKeyUsage | TLS Web Server Authentication |
 | SAN | `DNS:<your API FQDN>` |
-| CA | Standard Mozilla trusted CA list — no need to send to NoGi |
+| CA | Standard Mozilla trusted CA list — no need to send to Norsk Gjeldsinformasjon |
 
 ## Your enterprise client certificate
 
@@ -50,13 +50,13 @@ For details on the `organizationIdentifier` format, see [ETSI EN 319 412-1 V1.6]
 
 ## Certificate renewal timelines
 
-| Environment | Notify NoGi | NoGi installs |
+| Environment | Notify Norsk Gjeldsinformasjon | Norsk Gjeldsinformasjon installs |
 |---|---|---|
 | Test | 10 business days before expiry | Within 5 business days |
 | Production | 20 business days before expiry | Within 10 business days |
 
 !!! note "Transitions"
 
-    NoGi accepts both old and new enterprice certificates during transitions — no downtime required if timelines are followed.
+    Norsk Gjeldsinformasjon accepts both old and new enterprice certificates during transitions — no downtime required if timelines are followed.
 
     For rotating or renewing TLS certificates, there's typically no need to coordinate with Norsk Gjeldsinformasjon.

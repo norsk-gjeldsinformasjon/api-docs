@@ -5,13 +5,13 @@ tags:
 
 # Deliver debt data — Onboarding
 
-Before you can deliver debt data to NoGi, a signed agreement must be in place and your technical setup must be registered.
+Before you can deliver debt data to Norsk Gjeldsinformasjon, a signed agreement must be in place and your technical setup must be registered.
 
 ## Choose your scenario
 
 | Scenario | Description |
 |---|---|
-| [1. New financial institution](#1-new-financial-institution) | First-time integration with no prior NoGi connection |
+| [1. New financial institution](#1-new-financial-institution) | First-time integration with no prior connection to Norsk Gjeldsinformasjon |
 | [2. New IT service provider](#2-new-it-service-provider) | Migrating to a new provider — existing integration or not |
 | [3. Merger with another FI](#3-merger-with-another-financial-institution) | Handling data transfer between merging institutions |
 | [4. Reporting on behalf of another FI](#4-reporting-on-behalf-of-another-fi) | Debt collection agencies acting for another institution |
@@ -29,13 +29,13 @@ Send a request to [post@norskgjeld.no](mailto:post@norskgjeld.no) with:
 - Enterprise certificate (SEID 2.0) — issued by Buypass or Commfides
 
 !!! note "What happens next"
-    NoGi will configure your FI in both test and production. You will receive test access details and can begin [mandatory testing](Testing_and_go-live.md). See [Security requirements](../../reference/security-requirements.md) for certificate and authentication requirements.
+    Norsk Gjeldsinformasjon will configure your FI in both test and production. You will receive test access details and can begin [mandatory testing](Testing_and_go-live.md). See [Security requirements](../../reference/security-requirements.md) for certificate and authentication requirements.
 
 ---
 
 ## 2. New IT service provider
 
-**If the new provider already has a NoGi integration**, they only need to establish a new `getalldata` URL and assess whether to reuse or update static IP addresses.
+**If the new provider already has an integration with Norsk Gjeldsinformasjon**, they only need to establish a new `getalldata` URL and assess whether to reuse or update static IP addresses.
 
 **If not**, follow Scenario 1.
 

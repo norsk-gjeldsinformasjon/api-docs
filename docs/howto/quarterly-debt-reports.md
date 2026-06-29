@@ -24,9 +24,9 @@ Send the following to [post@norskgjeld.no](mailto:post@norskgjeld.no):
 - Complete SFTP URL including specific folder for NIN list and packaged data file
 - Authentication config: username/password OR PKC key (recommended)
 
-#### 2. NoGi will onboard your configuration
+#### 2. Norsk Gjeldsinformasjon will onboard your configuration
 
-NoGi will verify that our systems can establish contact with your server.
+Norsk Gjeldsinformasjon will verify that our systems can establish contact with your server.
 
 #### 3. Preparing an NIN list
 
@@ -39,9 +39,9 @@ NoGi will verify that our systems can establish contact with your server.
 
 The following steps are executed on the first date of each quarterly fiscal quarter:
 
-1. NoGi retrieves the NIN list from your server
+1. Norsk Gjeldsinformasjon retrieves the NIN list from your server
 2. If the NIN list has errors, a **Failure report** is sent back
-3. If valid, NoGi begins creating a `.gzip` data package
+3. If valid, Norsk Gjeldsinformasjon begins creating a `.gzip` data package
 4. A **Progress report** is delivered while the service works
 5. When ready, the data package is delivered to your specified SFTP location
 
@@ -67,7 +67,7 @@ Filename: `{organisationnumber}.gzip`. Data follows the standard API delivery sp
 
 ### Why are some NINs' loan arrays empty?
 
-If NoGi does not find any debt linked to a specific NIN in the debt registry, an empty array will be returned for that NIN.
+If Norsk Gjeldsinformasjon does not find any debt linked to a specific NIN in the debt registry, an empty array will be returned for that NIN.
 
 ### When can we delete the NIN list?
 

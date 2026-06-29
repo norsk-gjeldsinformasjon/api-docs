@@ -63,4 +63,4 @@ The request body is a JSON object using the same structure as the [getalldata re
 | `401` | Authentication is missing or not correct | Not authenticated to access resource      |
 | `403` | Not authorised                           | Not allowed to access resource            |
 | `429` | Too many requests                        | Signal client to back off                 |
-| `5xx` | Server error                             | NoGi will retry. Investigate and resolve. |
+| `5xx` | Server error                             | Norsk Gjeldsinformasjon will retry. Investigate and resolve. |

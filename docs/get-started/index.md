@@ -26,7 +26,7 @@ All endpoints in this section use the pre-production base URLs. Replace with pro
 
 ## Quick start: Integrated consent flow (pre-production)
 
-The fastest way to verify your integration is to run through the full consent lifecycle using `curl`. You need your **client ID** and **client secret** from NoGi.
+The fastest way to verify your integration is to run through the full consent lifecycle using `curl`. You need your **client ID** and **client secret** from Norsk Gjeldsinformasjon.
 
 !!! tip "Which integration?"
     These examples illustrate the "integrated consent" flow where the client (you) receives and manages consent from the person.

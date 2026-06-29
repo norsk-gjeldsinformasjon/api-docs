@@ -45,7 +45,7 @@ These are used as parameters when requesting an access token for using parts of 
 | Consent events     | `https://api-preprod.norskgjeld.no/feed/v1/consent`<br/>`https://api.norskgjeld.no/feed/v1/consent`           | `client.access.consent.events`                               |
 | Debt lookup        | `https://api-preprod.norskgjeld.no/v1/debt`<br/>`https://api.norskgjeld.no/v1/debt`                           | `debt.unsecured.presentation` or `debt.unsecured.processing` |
 
-See the [Consent API](consent/index.md) reference for endpoint-specific details on the auth and token endpoints. |
+See the [Consent](consent/index.md) reference for endpoint-specific details on the auth and token endpoints. |
 
 
 ## Regular consent flows

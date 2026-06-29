@@ -15,7 +15,7 @@ Financial institutions can retrieve unsecured debt information as part of credit
 
 ## Consent Solution
 
-The consent solution enables individuals to authenticate and grant consent for a financial institution to retrieve unsecured debt information. Full endpoint reference is available in the [Consent API reference](reference/consent/index.md).
+The consent solution enables individuals to authenticate and grant consent for a financial institution to retrieve unsecured debt information. Full endpoint reference is available in the [Consent reference](reference/consent/index.md).
 
 ## Quarterly Debt Information
 

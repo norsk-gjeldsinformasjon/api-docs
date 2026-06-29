@@ -5,7 +5,7 @@ tags:
 
 # OpenAPI specification
 
-This page provides an interactive OpenAPI (Swagger) specification for the Consent APIs.
+This page provides an interactive OpenAPI (Swagger) specification for the consent APIs.
 You can expand each endpoint to see request parameters, response schemas, and example values.
 
 The spec covers these APIs:
@@ -23,7 +23,7 @@ The spec covers these APIs:
 
 !!! tip "Looking for structured reference pages?"
     Each topic is also covered in detail with tables and flow diagrams:
-    - [Consent API overview](consent/index.md) — base URLs, auth flows, and scopes
+    - [Consent overview](consent/index.md) — base URLs, auth flows, and scopes
     - [Auth endpoint](consent/auth-endpoint.md) — authorization request parameters
     - [Token endpoint](consent/token-endpoint.md) — token exchange and response format
     - [Collect debt](consent/collect-debt.md) — debt retrieval by consent

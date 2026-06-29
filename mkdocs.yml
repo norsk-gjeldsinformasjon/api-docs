@@ -80,7 +80,7 @@ nav:
       - Testing & go-live: howto/deliver-debt-data/Testing_and_go-live.md
   - Reference:
     - Reference: reference/index.md
-    - Consent API:
+    - Consent:
       - Overview: reference/consent/index.md
       - Scopes: reference/consent/scopes.md
       - OpenID configuration: reference/consent/openid-configuration.md

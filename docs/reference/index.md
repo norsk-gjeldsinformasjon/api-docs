@@ -21,18 +21,13 @@ See [Scopes](consent/scopes.md) for the full reference including scope identifie
 
 ## Consent duration
 
-Consents can be requested with a duration. A duration specifies *how long* the organization can look up information about debt. If no duration in specified, then a single-use scope will be created. This scope can be used within a few minutes and only used once.
+Consents can be requested with a duration. A duration specifies *how long* the organization can look up information about debt. If no duration is specified, a single-use scope is created — usable within a few minutes, once only.
 
-Note that individuals can withdraw consents at any time.
+Note that individuals can withdraw their consents at any time.
 
-| Purpose (scope) | Duration                        |
-|-----------------|---------------------------------|
-| Presentation    | 10m (default), 365 days maximum |
-| Processing      | 10m (default), 28 days maximum  |
+Duration is specified by appending the number in days to the scope identifier. Example: `debt.unsecured.presentation.100` for a presentation scope active for 100 days.
 
-Duration is specified by appending the number to the scope. Example: `debt.unsecured.presentation.100` to specify a presentation scope that should be active for 100 days.
-
-See [Scopes](consent/scopes.md#extended-duration) for more details on requesting consents with extended validity.
+See [Scopes](consent/scopes.md#extended-duration) for scope-specific duration limits and details on requesting extended validity.
 
 
 ## <a name="reference-consent-authorization-audience-and-scope"></a> Consent authorization: audience and scope

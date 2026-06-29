@@ -58,5 +58,5 @@ Correct: "debt.unsecured.presentation openid".
 Incorrect: "openid debt.unsecured.presentation"
 
 | Scope | Intended use | Description |
-|---|---|---|---|
+|---|---|---|
 | `openid` | Receive consentID and ssn securely for verifying correct person has consented to share debt information. Can be used to go directly to the Client Credentials Flow from the Authorization Code Flow by extracting the consentID from the ID Token. | ID Token as a JWT-token with:<br>`"pid": <ssn>`<br>and<br>`"consent_id": <consentID>`<br><br>Note: The `"sub"` field should not be stored |

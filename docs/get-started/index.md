@@ -191,20 +191,17 @@ You will receive a clientId and credentials that can be used when talking to our
 
 ### Testing
 
-Before you can start testing you will need a client with registered callback URIs and a BankID test
-user.
+Once you have a client with registered callback URIs, you can run through the consent flow in
+preprod without provisioning a test user yourself: at the ID-porten login screen, choose
+**TestID** and enter one of the synthetic NINs `14842249091` or `29868099311`. No password
+required. These two NINs have mocked debt data, so the debt API will return a populated response
+for them.
 
-This can be created
-at [https://ra-preprod.bankidnorge.no/#/generate](https://ra-preprod.bankidnorge.no/#/generate).
-Generate an NIN and set the BankID type to netcentric. When you use this BankID with ID-porten for
-the first time, you will be asked if you want to add additional info which you can skip.
+For more on TestID, see
+[Digdir's ID-porten test users documentation](https://docs.digdir.no/docs/idporten/idporten/idporten_testbrukere.html).
 
-In preprod (BankID TestBank) the one-time code is always `otp`, and the password is `qwer1234`
-
-!!! note "Mocked debt data"
-    There will not be any loan information stored on the BankID test person you have created in
-    our test environment, so the debt API will not list any creditors. Mocked debt data is
-    available on these synthetic personal numbers: `14842249091` and `29868099311`.
+If you specifically need to exercise the BankID UI instead, see
+[How do I test the consent flow with BankID](../howto/test-with-bankid.md).
 
 ### Authorize
 

@@ -69,6 +69,7 @@ nav:
     - How-to: howto/index.md
     - Select an integration: howto/select-integration.md
     - Authorize: howto/authorize.md
+    - Test with BankID (netcentric): howto/test-with-bankid.md
     - Look up debt with consent:
       - Look up debt with consent: howto/lookup-debt-with-consent.md
       - Get notified about changes to consents: howto/consent-notifications.md

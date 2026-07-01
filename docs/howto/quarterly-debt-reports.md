@@ -63,18 +63,4 @@ Contains: list of invalid NINs, duplicate NINs, receiver organisation number and
 
 Filename: `{organisationnumber}.gzip`. Data follows the standard API delivery specification.
 
-## FAQ
-
-### Why are some NINs' loan arrays empty?
-
-If Norsk Gjeldsinformasjon does not find any debt linked to a specific NIN in the debt registry, an empty array will be returned for that NIN.
-
-### When can we delete the NIN list?
-
-When the job is complete and the data package is present on your SFTP server, it is safe to remove the NIN list.
-
-### When must the NIN list be ready?
-The NIN list must be present on the SFTP server **by the last day of each quarter**
-(the day before the quarterly run). For example, for the Q2 run on April 1,
-the file must be available by March 31. If the file is missing, a failure report
-will be generated indicating "NIN list not found."
+For common questions about quarterly reports and more, see the [FAQ](../faq.md).

@@ -9,17 +9,17 @@ tags:
 GET /debt-information/v1/loans/{financialInstitutionID}
 ```
 
-Called by NoGi daily, queued some time after **05:00 UTC**. Returns the complete dataset for all customers.
+Called by Norsk Gjeldsinformasjon daily, queued some time after **05:00 UTC**. Returns the complete dataset for all customers.
 
 !!! warning "Data availability"
-    All debt data must be updated and available from **05:00 UTC daily**. NoGi's call is queued after this time.
+    All debt data must be updated and available from **05:00 UTC daily**. Norsk Gjeldsinformasjon's call is queued after this time.
 
 ## Query parameters
 
 | Parameter | Required | Description |
 |---|---|---|
 | `financialInstitutionID` | Optional | Organisation number of the FI. A 9-digit integer or string of 9–16 characters. Supports foreign organisation numbers (e.g. 10-digit `5569622441`). If omitted, data for all FIs under this provider are returned. |
-| `page` | Optional | 0-based page index. Required if the total response exceeds 100 MB. Each page must be at least 50 MB. NoGi requests pages sequentially until a page with fewer items than the page size is returned. |
+| `page` | Optional | 0-based page index. Required if the total response exceeds 100 MB. Each page must be at least 50 MB. Norsk Gjeldsinformasjon requests pages sequentially until a page with fewer items than the page size is returned. |
 
 ## Response schema
 
@@ -104,4 +104,4 @@ The response body is a JSON object with the following top-level fields:
 | `401` | Authentication is missing or not correct | Not authenticated to access resource      |
 | `403` | Not authorised                           | Not allowed to access resource            |
 | `429` | Too many requests                        | Signal client to back off                 |
-| `5xx` | Server error                             | NoGi will retry. Investigate and resolve. |
+| `5xx` | Server error                             | Norsk Gjeldsinformasjon will retry. Investigate and resolve. |

@@ -17,21 +17,20 @@ We currently offer these scopes:
 | Presentation | The debt will be presented to the individual                                           |
 | Processing   | The debt will be used for assessing an application from the individual for loan/credit |
 
+See [Scopes](consent/scopes.md) for the full reference including scope identifiers and the optional `openid` scope.
+
 ## Consent duration
 
-Consents can be requested with a duration. A duration specifies *how long* the organization can look up information about debt. If no duration in specified, then a single-use scope will be created. This scope can be used within a few minutes and only used once.
+Consents can be requested with a duration. A duration specifies *how long* the organization can look up information about debt. If no duration is specified, a single-use scope is created — usable within a few minutes, once only.
 
-Note that individuals can withdraw consents at any time.
+Note that individuals can withdraw their consents at any time.
 
-| Purpose (scope) | Duration                        |
-|-----------------|---------------------------------|
-| Presentation    | 10m (default), 365 days maximum |
-| Processing      | 10m (default), 28 days maximum  |
+Duration is specified by appending the number in days to the scope identifier. Example: `debt.unsecured.presentation.100` for a presentation scope active for 100 days.
 
-Duration is specified by appending the number to the scope. Example: `debt.unsecured.presentation.100` to specify a presentation scope that should be active for 100 days.
+See [Scopes](consent/scopes.md#extended-duration) for scope-specific duration limits and details on requesting extended validity.
 
 
-## <a name="reference-consent-authorization-audience-and-scope"></a> Consent authorization audience and scope
+## <a name="reference-consent-authorization-audience-and-scope"></a> Consent authorization: audience and scope
 
 These are used as parameters when requesting an access token for using parts of the API.
 
@@ -41,10 +40,12 @@ These are used as parameters when requesting an access token for using parts of 
 | Consent events     | `https://api-preprod.norskgjeld.no/feed/v1/consent`<br/>`https://api.norskgjeld.no/feed/v1/consent`           | `client.access.consent.events`                               |
 | Debt lookup        | `https://api-preprod.norskgjeld.no/v1/debt`<br/>`https://api.norskgjeld.no/v1/debt`                           | `debt.unsecured.presentation` or `debt.unsecured.processing` |
 
+See the [Consent](consent/index.md) reference for endpoint-specific details on the auth and token endpoints. |
+
 
 ## Regular consent flows
 
-We are offering two OAuth2.0 flows, Authorization Code and Client Credentials.
+We are offering two OAuth 2.0 flows, Authorization Code and Client Credentials.
 
 ### Authorization Code Flow
 

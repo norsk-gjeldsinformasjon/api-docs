@@ -1,6 +1,6 @@
 ---
 tags:
-  - fi-lookup
+  - debt-search
 ---
 
 # Look up debt without consent
@@ -15,19 +15,19 @@ This service is for financial institutions with a legal basis under **Gjeldsinfo
 
 ## Prerequisites
 
-- Signed agreement with NoGi — contact [post@norskgjeld.no](mailto:post@norskgjeld.no)
+- Signed agreement with Norsk Gjeldsinformasjon — contact [post@norskgjeld.no](mailto:post@norskgjeld.no)
 - Valid enterprise certificate (SEID 2.0) and mTLS configured — see [Security requirements](../reference/security-requirements.md)
-- Network access to NoGi test and production endpoints
+- Network access to Norsk Gjeldsinformasjon test and production endpoints
 
 ---
 
 ## Endpoint
 
-| Environment | URL |
-|---|---|
-| Test | `https://ws.preprod.norskgjeld.no/api/rest/v2/debt/search` |
-| OpenAPI (test) | `https://ws.preprod.norskgjeld.no/api/rest/swagger.json` |
-| Production | Provided during onboarding |
+!!! tip "Base URLs"
+    - Test: `https://ws.preprod.norskgjeld.no`
+    - Production: `https://ws.norskgjeld.no`
+
+The search endpoint is at `/api/rest/v2/debt/search` and the OpenAPI spec is at `/api/rest/swagger.json`.
 
 ---
 
@@ -43,7 +43,7 @@ This service is for financial institutions with a legal basis under **Gjeldsinfo
 | `coBorrowers` | No | Array of co-borrowers. Each item has one field: `ssn`. |
 | `maxTimeToWait` | No | Max wait in ms (1000–60000). Default: 3000. |
 | `onBehalfOfOrganization` | Conditional | Required if performing lookup on behalf of another FI. |
-| `usingOwnNotification` | No | Set `true` to disable NoGi default notification. Requires separate agreement. |
+| `usingOwnNotification` | No | Set `true` to disable Norsk Gjeldsinformasjon default notification. Requires separate agreement. |
 
 ### Example request
 
@@ -67,5 +67,5 @@ This service is for financial institutions with a legal basis under **Gjeldsinfo
 | `200` | Success | Parse response, log, continue |
 | `204` | No data found | Treat as "no debt" per your credit policy |
 | `400` | Input validation error | Do not retry. Fix input and resubmit. |
-| `403` | Not authorised | Check certificate and config. Contact NoGi if unresolved. |
+| `403` | Not authorised | Check certificate and config. Contact Norsk Gjeldsinformasjon if unresolved. |
 | `5xx` | Server error | Retry with exponential backoff. |

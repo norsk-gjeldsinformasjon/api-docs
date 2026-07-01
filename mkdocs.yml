@@ -9,6 +9,8 @@ theme:
   logo: assets/logo.png
   icon:
     repo: fontawesome/brands/github
+  features:
+    - navigation.indexes
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
@@ -67,18 +69,27 @@ nav:
     - How-to: howto/index.md
     - Select an integration: howto/select-integration.md
     - Authorize: howto/authorize.md
+    - Test with BankID (netcentric): howto/test-with-bankid.md
     - Look up debt with consent:
       - Look up debt with consent: howto/lookup-debt-with-consent.md
       - Get notified about changes to consents: howto/consent-notifications.md
     - Look up debt without consent: howto/lookup-debt-without-consent.md
+    - Manage consents externally: howto/external-consent-management.md
     - Receive quarterly debt reports: howto/quarterly-debt-reports.md
     - Deliver debt data:
       - Onboarding & scenarios: howto/deliver-debt-data/Onboarding_and_Scenarios.md
       - Testing & go-live: howto/deliver-debt-data/Testing_and_go-live.md
   - Reference:
     - Reference: reference/index.md
-    - Consent reference: reference/consent.md
-    - OpenAPI: reference/openapi.md
+    - Consent:
+      - Overview: reference/consent/index.md
+      - Scopes: reference/consent/scopes.md
+      - OpenID configuration: reference/consent/openid-configuration.md
+      - Auth endpoint: reference/consent/auth-endpoint.md
+      - Token endpoint: reference/consent/token-endpoint.md
+      - Collect debt info: reference/consent/collect-debt.md
+      - Consent feed: reference/consent/consent-feed.md
+      - OpenAPI: reference/openapi.md
     - Deliver debt data API:
       - Overview: reference/deliver-debt-data/index.md
       - getalldata: reference/deliver-debt-data/getalldata.md

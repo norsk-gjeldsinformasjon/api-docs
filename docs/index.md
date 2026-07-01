@@ -4,21 +4,23 @@ Norsk Gjeldsinformasjon AS was established by financial institutions in Norway t
 
 We have established a national infrastructure based on modern technology for the collection and distribution of debt information.
 
-!!! note "Migration in progress"
-    Documentation is currently being migrated from [Confluence](https://norskgjeld.atlassian.net/wiki/spaces/GJEL/overview) to this site. New sections for delivering debt data have been added.
+Welcome to the new, centralized home for Norsk Gjeldsinformasjon technical documentation. All API reference materials, integration guides, and security specifications are now maintained here.
+
+!!! tip "New to Norsk Gjeldsinformasjon?"
+    Start with [Get started](get-started/index.md) to choose your integration path and follow step-by-step instructions for the pre-production environment.
 
 ## Lookup for Credit Assessments
 
-Financial institutions can retrieve unsecured debt information as part of credit application processing or when modifying existing loan terms.
+Financial institutions can retrieve unsecured debt information as part of credit application processing or when modifying existing loan terms. See the [Authorization guide](howto/authorize.md) and [debt lookup](howto/lookup-debt-with-consent.md) how-tos to get started.
 
 ## Consent Solution
 
-The consent solution enables individuals to authenticate and grant consent for a financial institution to retrieve unsecured debt information.
+The consent solution enables individuals to authenticate and grant consent for a financial institution to retrieve unsecured debt information. Full endpoint reference is available in the [Consent reference](reference/consent/index.md).
 
 ## Quarterly Debt Information
 
-Each quarter, you can retrieve debt information for all your loan customers to establish or update credit scoring models.
+Each quarter, you can retrieve debt information for all your loan customers to establish or update credit scoring models. See the [quarterly reports guide](howto/quarterly-debt-reports.md).
 
 ## Delivering Debt Data
 
-All financial institutions offering unsecured consumer debt must make their debt information available to NoGi daily. See the [Deliver debt data](howto/deliver-debt-data/Onboarding_and_Scenarios.md) section for complete documentation.
+All financial institutions offering unsecured consumer debt must make their debt information available to Norsk Gjeldsinformasjon daily. See the [deliver debt data](howto/deliver-debt-data/Onboarding_and_Scenarios.md) section for complete documentation, including endpoint references, validation rules, and testing requirements.

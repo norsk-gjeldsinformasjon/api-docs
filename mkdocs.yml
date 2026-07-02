@@ -101,5 +101,6 @@ nav:
     - Explanations: explanation/index.md
     - Consent: explanation/consent.md
     - Consuming event feeds: explanation/consume-events-feed.md
+  - FAQ: faq.md
   - Contribute: contributing.md
   - Tags: tags/index.md

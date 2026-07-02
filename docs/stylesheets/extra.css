@@ -28,6 +28,20 @@
   opacity: 1 !important;
 }
 
+/* FAQ page: auto-number questions under each group heading */
+/* Scoped via :has() so it only applies when the content contains the FAQ page heading */
+.md-content__inner:has(h1#frequently-asked-questions) h2 {
+  counter-reset: faq-counter;
+}
+
+.md-content__inner:has(h1#frequently-asked-questions) h3 {
+  counter-increment: faq-counter;
+}
+
+.md-content__inner:has(h1#frequently-asked-questions) h3::before {
+  content: counter(faq-counter) ". ";
+}
+
 .headerlink::before {
   font-family: "bootstrap-icons";
   content: "\f470";

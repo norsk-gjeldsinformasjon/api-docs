@@ -7,6 +7,9 @@ tags:
 
 Before you can deliver debt data to Norsk Gjeldsinformasjon, a signed agreement must be in place and your technical setup must be registered.
 
+!!! info "Understanding the concepts"
+    For a conceptual overview of roles (FI, provider, providerID) and how mergers, provider changes, and portfolio transfers work, see [Managing changes in data delivery](../../explanation/delivery-changes.md).
+
 ## Choose your scenario
 
 | Scenario | Description |
@@ -14,7 +17,7 @@ Before you can deliver debt data to Norsk Gjeldsinformasjon, a signed agreement 
 | [1. New financial institution](#1-new-financial-institution) | First-time integration with no prior connection to Norsk Gjeldsinformasjon |
 | [2. New IT service provider](#2-new-it-service-provider) | Migrating to a new provider — existing integration or not |
 | [3. Merger with another FI](#3-merger-with-another-financial-institution) | Handling data transfer between merging institutions |
-| [4. Reporting on behalf of another FI](#4-reporting-on-behalf-of-another-fi) | Debt collection agencies acting for another institution |
+| [4. Provider serving a new FI client](#4-provider-serving-a-new-fi-client) | An IT service provider starts serving a new financial institution |
 
 ---
 
@@ -58,6 +61,15 @@ Send a request to [post@norskgjeld.no](mailto:post@norskgjeld.no) with:
 
 ---
 
-## 4. Reporting on behalf of another FI
+## 4. Provider serving a new FI client
 
-Provide to [post@norskgjeld.no](mailto:post@norskgjeld.no): a new `getalldata` URL, static IP addresses, and the organisation number and legal name of the institution being reported on behalf of.
+An IT service provider that already has an integration with Norsk Gjeldsinformasjon starts serving a new financial institution client.
+
+Provide to [post@norskgjeld.no](mailto:post@norskgjeld.no):
+
+- A new `getalldata` URL for the new FI client
+- Static IP addresses
+- Organisation number and legal name of the financial institution being served
+
+!!! tip "The provider handles the technical side"
+    Since the provider already has an established integration, this is primarily about configuring a new endpoint and certificate for the new FI client — not a full new setup.

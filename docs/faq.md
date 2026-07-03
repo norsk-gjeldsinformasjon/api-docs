@@ -130,6 +130,18 @@ All monetary amounts are in **NOK × 100**. Example: 100 NOK = `10000`. Interest
 
 All data is validated against a set of rules — any violation causes the data to be rejected. See [Data validation](reference/deliver-debt-data/validation.md) for the full rule set.
 
+### What happens if my organization merges with another FI?
+
+The two FIs coordinate the cutover. The transferring FI returns an empty customer array (not an error), and the acquiring FI returns the complete dataset. See [Managing changes in data delivery](explanation/delivery-changes.md) for the full explanation and [Onboarding scenarios](howto/deliver-debt-data/Onboarding_and_Scenarios.md#3-merger-with-another-financial-institution) for the step-by-step procedure.
+
+### What happens if we change IT service provider?
+
+The old provider stops returning data (empty array) and the new provider starts returning the complete dataset. The two providers coordinate the switch — the cutover procedure is the same regardless of whether the provider change happens alongside a merger or independently. See [Managing changes in data delivery](explanation/delivery-changes.md) for the concepts and [New IT service provider](howto/deliver-debt-data/Onboarding_and_Scenarios.md#2-new-it-service-provider) for the how-to.
+
+### What happens if a debt portfolio is transferred to another FI or provider?
+
+The transferring party returns an empty customer array (not an error), and the acquiring party returns the complete dataset for the transferred customers. This applies whether the portfolio moves between providers for the same FI, or between different FIs (e.g., a loan book sale). See [Managing changes in data delivery](explanation/delivery-changes.md) for details.
+
 ---
 
 ## Questions about quarterly debt reports

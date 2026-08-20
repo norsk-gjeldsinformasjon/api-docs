@@ -142,6 +142,14 @@ The old provider stops returning data (empty array) and the new provider starts 
 
 The transferring party returns an empty customer array (not an error), and the acquiring party returns the complete dataset for the transferred customers. This applies whether the portfolio moves between providers for the same FI, or between different FIs (e.g., a loan book sale). See [Managing changes in data delivery](explanation/delivery-changes.md) for details.
 
+### What enterprise certificates (SEID 2.0) do I need for debt data delivery?
+
+If your financial institution delivers debt data, you need an **enterprise client certificate (SEID 2.0 / Virksomhetssertifikat)** from either Buypass or Commfides. This certificate identifies your system when it connects to Norsk Gjeldsinformasjon (push updates) or when NoGi connects to your endpoints (getalldata, getDataForSSN — via mTLS).
+
+Notify NoGi **10 business days** (test) or **20 business days** (production) before expiry to allow for renewal.
+
+Your server endpoints also need a standard **TLS server certificate** from a Mozilla-trusted CA. See [Security requirements](reference/security-requirements.md) for the full specifications.
+
 ---
 
 ## Questions about quarterly debt reports
@@ -188,3 +196,9 @@ See [Contribute](contributing.md) for instructions on how to suggest changes or 
 ### What is the difference between pre-production and production?
 
 Pre-production (`preprod`) is a test environment where you can verify your integration using synthetic National Identity Numbers. Once your integration is verified, you switch to production URLs (without the `-preprod` suffix). You need to coordinate the go-live with Norsk Gjeldsinformasjon.
+
+### What kind of TLS server certificate do I need on my endpoints?
+
+If NoGi connects to your endpoints (`getalldata`, `getDataForSSN`), your server needs a **TLS server certificate** from a Mozilla-trusted CA. A standard TLS/SSL certificate is sufficient. See [Security requirements](reference/security-requirements.md#your-server-tls-certificate) for details.
+
+You do **not** need to send your server TLS certificate to Norsk Gjeldsinformasjon.

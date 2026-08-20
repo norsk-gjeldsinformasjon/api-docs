@@ -150,6 +150,8 @@ Notify NoGi **10 business days** (test) or **20 business days** (production) bef
 
 Your server endpoints also need a standard **TLS server certificate** from a Mozilla-trusted CA. See [Security requirements](reference/security-requirements.md) for the full specifications.
 
+For details on NoGi's own enterprise certificate, see [Enterprise certificates](reference/enterprise-certificates.md).
+
 ---
 
 ## Questions about quarterly debt reports

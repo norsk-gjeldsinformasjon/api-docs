@@ -51,7 +51,7 @@ This applies when your system acts as a **client** — you call NoGi's push or s
 
 | Requirement | Value |
 |---|---|
-| KeyUsage | `digitalSignature` (critical) |
+| KeyUsage | `digitalSignature` (critical) — additional KeyUsage flags are acceptable |
 | Subject.organizationIdentifier | Your organisation number with `NTR` prefix, per [ETSI EN 319 412-1](https://www.etsi.org/deliver/etsi_en/319400_319499/31941201/01.06.01_60/en_31941201v010601p.pdf). Example: `NTRNO-920013015`. Only `NTR` (National Trade Registry) identifier type is supported. |
 | Ownership | Must be owned by the legal entity sending data |
 | Approved CAs | Buypass or Commfides |
@@ -71,7 +71,7 @@ When Norsk Gjeldsinformasjon connects to your endpoints (`getalldata`, `getDataF
 - NoGi's outbound traffic originates from **`92.62.32.241`** (both pre-production and production).
 - Your server needs the **Buypass root CA bundle** (or equivalent for Commfides) installed to validate NoGi's client certificate.
 
-For details on NoGi's enterprise certificate, see [Norsk Gjeldsinformasjon sitt enterprise-sertifikat](https://norskgjeld.atlassian.net/wiki/spaces/GJEL/pages/2148204545/Norsk+Gjeldsinformasjon+s+enterprise+certificate).
+For details on NoGi's enterprise certificate, see [Enterprise certificates](enterprise-certificates.md).
 
 ---
 

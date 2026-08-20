@@ -97,6 +97,7 @@ nav:
       - pushUpdates: reference/deliver-debt-data/pushUpdates.md
       - Data validation: reference/deliver-debt-data/validation.md
     - Security requirements: reference/security-requirements.md
+    - Enterprise certificates: reference/enterprise-certificates.md
   - Explanations:
     - Explanations: explanation/index.md
     - Consent: explanation/consent.md

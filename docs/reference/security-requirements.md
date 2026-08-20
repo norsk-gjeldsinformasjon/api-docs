@@ -39,6 +39,7 @@ This applies when your system acts as a **server** — NoGi connects to your end
 | Issuer | Any CA in the Mozilla trusted root store |
 | Minimum TLS version | TLS 1.2 |
 | SAN | Must cover your API hostname. Wildcard (`*.example.com`) is accepted. |
+| Port | Standard HTTPS port **443** is strongly preferred. |
 | Notify NoGi | Not required — use standard TLS certificate renewal procedures |
 
 A standard TLS/SSL certificate from any Mozilla-trusted CA is sufficient. You do **not** need to send your server TLS certificate to Norsk Gjeldsinformasjon.

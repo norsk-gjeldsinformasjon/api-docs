@@ -28,7 +28,7 @@ Send a request to [post@norskgjeld.no](mailto:post@norskgjeld.no) with:
 - Organisation number and legal name of the financial institution
 - Organisation number and legal name of the IT service provider (if applicable)
 - Base URL for `getalldata` in both production and test — must end with `/ws.norskgjeld.no/push/rest/v1/debt`
-- Static IP addresses for push updates in both environments
+- Static IP addresses for push updates in both environments — see [Outbound IP address change](../outbound-ip-change.md) (update required by October 2026)
 - Enterprise certificate (SEID 2.0) — issued by Buypass or Commfides
 
 !!! note "What happens next"

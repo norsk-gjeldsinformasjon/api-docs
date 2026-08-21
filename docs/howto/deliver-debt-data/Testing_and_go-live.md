@@ -10,6 +10,9 @@ All three API operations must be successfully tested in pre-production before pr
 !!! note "To get test access"
     If you are not yet onboarded, contact [post@norskgjeld.no](mailto:post@norskgjeld.no) with: organisation details, test endpoint URL, test IP addresses, and test enterprise certificate.
 
+    !!! info "Outbound IP change — October 2026"
+        NoGi's outbound IP addresses are changing. See [Outbound IP address change](../outbound-ip-change.md) for details.
+
     If you are an **existing production customer** who needs pre-production access, send the same information to [support@norskgjeld.no](mailto:support@norskgjeld.no).
 
 !!! warning "Synthetic NINs only"

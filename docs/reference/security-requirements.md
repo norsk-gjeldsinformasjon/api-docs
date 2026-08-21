@@ -25,7 +25,7 @@ All APIs exchanging debt information use mutual TLS (mTLS). The type of certific
 - [ ] Mutual TLS (mTLS) configured — both client and server authenticate
 - [ ] TLS server certificate on your endpoint (Mozilla trusted CA)
 - [ ] Enterprise client certificate (SEID 2.0 / Virksomhetssertifikat) — from Buypass or Commfides — for client authentication
-- [ ] NoGi's outbound IP `92.62.32.241` whitelisted (if using IP-based access control)
+- [ ] NoGi's outbound IP `92.62.32.241` whitelisted (if using IP-based access control) — **this IP is changing**, see [Outbound IP address change](../howto/outbound-ip-change.md)
 - [ ] Buypass root CA bundle installed to verify NoGi's client certificate (if using Buypass)
 
 ---
@@ -70,6 +70,9 @@ This applies when your system acts as a **client** — you call NoGi's push or s
 When Norsk Gjeldsinformasjon connects to your endpoints (`getalldata`, `getDataForSSN`), NoGi identifies itself using its own enterprise client certificate (Virksomhetssertifikat). Your server must be configured to **verify** this certificate — not just accept any client certificate — to confirm that the connecting party is Norsk Gjeldsinformasjon.
 
 - NoGi's outbound traffic originates from **`92.62.32.241`** (both pre-production and production).
+
+    !!! warning "Outbound IPs are changing"
+        The outbound IP address for outbound traffic from Norsk Gjeldsinformasjon will change on **October 6, 2026**. See [Outbound IP address change](../howto/outbound-ip-change.md) for details and action required.
 - Your server needs the **Buypass root CA bundle** (or equivalent for Commfides) installed to validate NoGi's client certificate.
 
 For details on NoGi's enterprise certificate, see [Enterprise certificates](enterprise-certificates.md).

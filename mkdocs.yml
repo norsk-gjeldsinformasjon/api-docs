@@ -64,6 +64,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Outbound IP address change: howto/outbound-ip-change.md
   - Get started: get-started/index.md
   - How-to:
     - How-to: howto/index.md

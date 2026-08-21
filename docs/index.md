@@ -6,6 +6,9 @@ We have established a national infrastructure based on modern technology for the
 
 Welcome to the new, centralized home for Norsk Gjeldsinformasjon technical documentation. All API reference materials, integration guides, and security specifications are now maintained here.
 
+!!! danger "Outbound IP addresses changing on October 6, 2026"
+    Norsk Gjeldsinformasjon is updating its outbound IP addresses. If your system receives `getAllData`/`getDataForSSN` calls or quarterly debt reports from us, see the [Outbound IP address change](howto/outbound-ip-change.md) page for the new IPs and action required.
+
 !!! tip "New to Norsk Gjeldsinformasjon?"
     Start with [Get started](get-started/index.md) to choose your integration path and follow step-by-step instructions for the pre-production environment.
 

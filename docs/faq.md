@@ -199,6 +199,10 @@ See [Contribute](contributing.md) for instructions on how to suggest changes or 
 
 Pre-production (`preprod`) is a test environment where you can verify your integration using synthetic National Identity Numbers. Once your integration is verified, you switch to production URLs (without the `-preprod` suffix). You need to coordinate the go-live with Norsk Gjeldsinformasjon.
 
+### Is NoGi's outbound IP address changing?
+
+Yes. On **October 6, 2026**, we are moving from a single shared IP (`92.62.32.241`) to environment-specific IPs. See [Outbound IP address change](howto/outbound-ip-change.md) for the new IPs and action required.
+
 ### What kind of TLS server certificate do I need on my endpoints?
 
 If NoGi connects to your endpoints (`getalldata`, `getDataForSSN`), your server needs a **TLS server certificate** from a Mozilla-trusted CA. A standard TLS/SSL certificate is sufficient. See [Security requirements](reference/security-requirements.md#your-server-tls-certificate) for details.

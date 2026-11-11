@@ -105,6 +105,22 @@ Access is regulated by the [Norwegian Debt Information Act](https://lovdata.no/d
 
 The consent-based API requires an individual to grant consent before you can look up their debt. The Search API (without consent) is available to authorized financial institutions directly. The debt data format is the same, but the consent-based response includes the names of creditors.
 
+### If a request includes both the loan applicant and a co-borrower, is all debt information returned for both, or only the loans they have in common?
+
+A complete overview of all unsecured debt is returned for each person in the request. The loan applicant's loans are returned in `loans`, and each co-borrower's loans are returned in a separate block in `coBorrowerWithLoans`.
+
+### Will other co-borrowers be identified, so that we can see who they are?
+
+No. We only return information about persons specified in the request (`ssn` and `coBorrowers`). For each loan, the `coBorrower` field only indicates whether the loan has a co-borrower:
+
+- `0` – no co-borrower
+- `1` – the person is a co-borrower on the loan
+- `2` – the person has a co-borrower on the loan
+
+### If the loan applicant and a co-borrower have a joint loan, will it be reported for both, and if so, will it be flagged?
+
+Yes, a joint loan is reported for both persons. The `coBorrower` field shows that the loan has a co-borrower, but the response contains no common identifier showing that it is the same loan in both lists. Loans of the same type with identical amounts, nominal interest rate and remaining terms may indicate a joint loan, but this does not provide a reliable match. Take this into account when calculating total debt, so that joint loans are not counted twice.
+
 ---
 
 ## Questions for debt data delivery
